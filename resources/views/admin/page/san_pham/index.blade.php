@@ -2,21 +2,20 @@
 @section('content')
 <div class="row" id="app">
     <div class="col-md-4">
-        <form id="formdata" v-on:submit.prevent="addSP()">
         <div class="card">
             <div class="card-header">
                 Thêm Mới Sản Phẩm
             </div>
             <div class="card-body">
                 <label>Tên Sản Phẩm</label>
-                <input v-on:keyup="chuyenThanhSlug()" name="ten_san_pham"  v-model="add.ten_san_pham" class="form-control mt-1" type="text">
+                <input v-on:keyup="chuyenThanhSlug()" v-model="add.ten_san_pham" class="form-control mt-1" type="text">
                 <label>Slug Sản Phẩm</label>
-                <input v-model="slug" type="text" name="slug_san_pham" class="form-control mt-1" type="text">
+                <input v-model="slug" type="text" class="form-control mt-1" type="text">
                 <label>Số Lượng</label>
                 <input v-model="add.so_luong" class="form-control mt-1" type="text">
                 <label>Hình Ảnh</label>
                 <div class="input-group">
-                    <input v-model="add.hinh_anh" id="hinh_anh" class="form-control" type="text" name="filepath">
+                    <input id="hinh_anh" class="form-control" type="text" name="filepath">
                     <span class="input-group-prepend">
                         <a id="lfm" data-input="hinh_anh" data-preview="holder" class="btn btn-primary">
                             <i class="fa fa-picture-o"></i> Choose
@@ -37,16 +36,15 @@
                     </template>
                 </select>
                 <label>Tình trạng</label>
-                <select v-model="add.is_open"class="form-control">
+                <select v-model="add.is_open" class="form-control">
                     <option value="1">Còn kinh doanh</option>
                     <option value="0">Dừng kinh doanh</option>
                 </select>
             </div>
             <div class="card-footer text-end">
-                <button type="submit" class="btn btn-primary">Thêm Mới</button>
+                <button type="button" v-on:click="addSP()" class="btn btn-primary">Thêm Mới</button>
             </div>
         </div>
-        </form>
     </div>
     <div class="col-md-8">
         <div class="card">
@@ -54,42 +52,44 @@
                 Danh Sách Sản Phẩm
             </div>
             <div class="card-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th class="text-center">#</th>
-                            <th class="text-center">Tên Sản Phẩm</th>
-                            <th class="text-center">Số Lượng</th>
-                            <th class="text-center">Hình Ảnh</th>
-                            <th class="text-center">Mô Tả</th>
-                            <th class="text-center">Giá Bán</th>
-                            <th class="text-center">Giá Khuyến Mãi</th>
-                            <th class="text-center">Danh Mục</th>
-                            <th class="text-center">Tình Trạng</th>
-                            <th class="text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(v, k) in listSanPham">
-                            <th class="text-center align-middle">@{{ k + 1 }}</th>
-                            <td class="align-middle">@{{ v.ten_san_pham }}</td>
-                            <td class="align-middle">@{{ v.so_luong }}</td>
-                            <td class="align-middle">@{{ v.hinh_anh }}</td>
-                            <td class="align-middle">@{{ v.mo_ta }}</td>
-                            <td class="align-middle">@{{ v.gia_ban }}</td>
-                            <td class="align-middle">@{{ v.gia_khuyen_mai }}</td>
-                            <td class="align-middle text-nowrap">@{{ v.ten_danh_muc }}</td>
-                            <td class="text-center">
-                                <button class="btn btn-success" v-on:click="changeStatus(v.id)" v-if="v.is_open == 1">Còn Kinh Doanh</button>
-                                <button class="btn btn-danger" v-on:click="changeStatus(v.id)" v-else>Dừng Kinh Doanh</button>
-                            </td>
-                            <td class="text-center align-middle text-nowrap">
-                                <button v-on:click="edit(v)" data-toggle="modal" data-target="#editModal" class="btn btn-info">Cập Nhật</button>
-                                <button v-on:click="sp_delete = v" data-toggle="modal" data-target="#xoaModal" class="btn btn-danger">Xóa Bỏ</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-center">Tên Sản Phẩm</th>
+                                <th class="text-center">Số Lượng</th>
+                                <th class="text-center">Hình Ảnh</th>
+                                <th class="text-center">Mô Tả</th>
+                                <th class="text-center">Giá Bán</th>
+                                <th class="text-center">Giá Khuyến Mãi</th>
+                                <th class="text-center">Danh Mục</th>
+                                <th class="text-center">Tình Trạng</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(v, k) in listSanPham">
+                                <th class="text-center align-middle">@{{ k + 1 }}</th>
+                                <td class="align-middle">@{{ v.ten_san_pham }}</td>
+                                <td class="align-middle">@{{ v.so_luong }}</td>
+                                <td class="align-middle">@{{ v.hinh_anh }}</td>
+                                <td class="align-middle">@{{ v.mo_ta }}</td>
+                                <td class="align-middle">@{{ v.gia_ban }}</td>
+                                <td class="align-middle">@{{ v.gia_khuyen_mai }}</td>
+                                <td class="align-middle text-nowrap">@{{ v.ten_danh_muc }}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-success" v-on:click="changeStatus(v.id)" v-if="v.is_open == 1">Còn Kinh Doanh</button>
+                                    <button class="btn btn-danger" v-on:click="changeStatus(v.id)" v-else>Dừng Kinh Doanh</button>
+                                </td>
+                                <td class="text-center align-middle text-nowrap">
+                                    <button v-on:click="edit(v)" data-toggle="modal" data-target="#editModal" class="btn btn-info">Cập Nhật</button>
+                                    <button v-on:click="sp_delete = v" data-toggle="modal" data-target="#xoaModal" class="btn btn-danger">Xóa Bỏ</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -187,6 +187,8 @@
         methods :   {
             addSP() {
                 this.add.mo_ta = CKEDITOR.instances['mo_ta'].getData();
+                this.add.slug_san_pham = this.slug;
+                this.add.hinh_anh = $("#hinh_anh").val();
                 axios
                     .post('/admin/san-pham/create', this.add)
                     .then((res) => {
@@ -194,7 +196,7 @@
                             toastr.success(res.data.message);
                             $("#formdata").trigger("reset");
                             CKEDITOR.instances['mo_ta'].setData('');
-
+                            this.loadSanPham();
                         }
                     })
                     .catch((res) => {

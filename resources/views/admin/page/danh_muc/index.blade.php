@@ -136,7 +136,6 @@
         this.loadData();
     },
     methods :   {
-
         add() {
             var paramObj = {};
             $.each($('#formdata').serializeArray(), function(_, kv) {
