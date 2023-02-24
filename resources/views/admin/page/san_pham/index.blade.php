@@ -1,0 +1,307 @@
+@extends('admin.master')
+@section('content')
+<div class="row" id="app">
+    <div class="col-md-4">
+        <form id="formdata" v-on:submit.prevent="addSP()">
+        <div class="card">
+            <div class="card-header">
+                Thêm Mới Sản Phẩm
+            </div>
+            <div class="card-body">
+                <label>Tên Sản Phẩm</label>
+                <input v-on:keyup="chuyenThanhSlug()" name="ten_san_pham"  v-model="add.ten_san_pham" class="form-control mt-1" type="text">
+                <label>Slug Sản Phẩm</label>
+                <input v-model="slug" type="text" name="slug_san_pham" class="form-control mt-1" type="text">
+                <label>Số Lượng</label>
+                <input v-model="add.so_luong" class="form-control mt-1" type="text">
+                <label>Hình Ảnh</label>
+                <div class="input-group">
+                    <input v-model="add.hinh_anh" id="hinh_anh" class="form-control" type="text" name="filepath">
+                    <span class="input-group-prepend">
+                        <a id="lfm" data-input="hinh_anh" data-preview="holder" class="btn btn-primary">
+                            <i class="fa fa-picture-o"></i> Choose
+                        </a>
+                    </span>
+                </div>
+                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                <label>Mô tả</label>
+                <input v-model="add.mo_ta" id="mo_ta" name="mo_ta" class="form-control mt-1" type="text">
+                <label>Giá bán</label>
+                <input v-model="add.gia_ban" class="form-control mt-1" type="number">
+                <label>Giá khuyến mãi</label>
+                <input v-model="add.gia_khuyen_mai" class="form-control mt-1" type="number">
+                <label>Danh Mục</label>
+                <select v-model="add.id_danh_muc" class="form-control mt-1">
+                    <template v-for="(v, k) in listDanhMuc">
+                        <option v-bind:value="v.id">@{{ v.ten_danh_muc }}</option>
+                    </template>
+                </select>
+                <label>Tình trạng</label>
+                <select v-model="add.is_open"class="form-control">
+                    <option value="1">Còn kinh doanh</option>
+                    <option value="0">Dừng kinh doanh</option>
+                </select>
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary">Thêm Mới</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                Danh Sách Sản Phẩm
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Tên Sản Phẩm</th>
+                            <th class="text-center">Số Lượng</th>
+                            <th class="text-center">Hình Ảnh</th>
+                            <th class="text-center">Mô Tả</th>
+                            <th class="text-center">Giá Bán</th>
+                            <th class="text-center">Giá Khuyến Mãi</th>
+                            <th class="text-center">Danh Mục</th>
+                            <th class="text-center">Tình Trạng</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(v, k) in listSanPham">
+                            <th class="text-center align-middle">@{{ k + 1 }}</th>
+                            <td class="align-middle">@{{ v.ten_san_pham }}</td>
+                            <td class="align-middle">@{{ v.so_luong }}</td>
+                            <td class="align-middle">@{{ v.hinh_anh }}</td>
+                            <td class="align-middle">@{{ v.mo_ta }}</td>
+                            <td class="align-middle">@{{ v.gia_ban }}</td>
+                            <td class="align-middle">@{{ v.gia_khuyen_mai }}</td>
+                            <td class="align-middle text-nowrap">@{{ v.ten_danh_muc }}</td>
+                            <td class="text-center">
+                                <button class="btn btn-success" v-on:click="changeStatus(v.id)" v-if="v.is_open == 1">Còn Kinh Doanh</button>
+                                <button class="btn btn-danger" v-on:click="changeStatus(v.id)" v-else>Dừng Kinh Doanh</button>
+                            </td>
+                            <td class="text-center align-middle text-nowrap">
+                                <button v-on:click="edit(v)" data-toggle="modal" data-target="#editModal" class="btn btn-info">Cập Nhật</button>
+                                <button v-on:click="sp_delete = v" data-toggle="modal" data-target="#xoaModal" class="btn btn-danger">Xóa Bỏ</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cập Nhật Sản Phẩm</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form id="formdataedit" v-on:submit.prevent="update()">
+                <input v-model="sp_edit.id" name="id"  class="form-control mt-1" type="hidden">
+                <label>Tên Sản Phẩm</label>
+                <input v-model="sp_edit.ten_san_pham" name="ten_san_pham" class="form-control mt-1" type="text">
+                <label>Slug Sản Phẩm</label>
+                <input v-model="sp_edit.slug_san_pham" class="form-control mt-1" type="text">
+                <label>Số Lượng</label>
+                <input v-model="sp_edit.so_luong" class="form-control mt-1" type="text">
+                <label>Hình Ảnh</label>
+                <div class="input-group">
+                    <input v-model="sp_edit.hinh_anh" id="hinh_anh" class="form-control" type="text" name="filepath">
+                    <span class="input-group-prepend">
+                        <a id="lfm" data-input="hinh_anh" data-preview="holder" class="btn btn-primary">
+                            <i class="fa fa-picture-o"></i> Choose
+                        </a>
+                    </span>
+                </div>
+                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                <label>Mô tả</label>
+                <input id="mo_ta_edit" name="mo_ta_edit" class="form-control mt-1" type="text">
+                <label>Giá bán</label>
+                <input v-model="sp_edit.gia_ban" class="form-control mt-1" type="number">
+                <label>Giá khuyến mãi</label>
+                <input v-model="sp_edit.gia_khuyen_mai" class="form-control mt-1" type="number">
+                <label>Danh Mục</label>
+                <select v-model="sp_edit.id_danh_muc" class="form-control mt-1">
+                    <template v-for="(v, k) in listDanhMuc">
+                        <option v-bind:value="v.id">@{{ v.ten_danh_muc }}</option>
+                    </template>
+                </select>
+                <label>Tình trạng</label>
+                <select v-model="sp_edit.is_open"class="form-control">
+                    <option value="1">Còn kinh doanh</option>
+                    <option value="0">Dừng kinh doanh</option>
+                </select>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" v-on:click="updateSanPham()" data-dismiss="modal" class="btn btn-primary">Cập Nhật</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="xoaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xóa Sản Phẩm</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa sản phẩm: <b class="text-danger">@{{ sp_delete.ten_danh_muc }}</b> này không?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" v-on:click="deleteSanPham()" data-dismiss="modal" class="btn btn-primary">Xóa Sản Phẩm</button>
+          </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('js')
+<script>
+    new Vue({
+        el      :   '#app',
+        data    :   {
+            add            : {},
+            listDanhMuc    : [],
+            listSanPham    : [],
+            sp_edit        : {},
+            sp_delete      : {},
+            slug           : '',
+            ten_san_pham   : '',
+        },
+        created()   {
+            this.loadDanhMuc();
+            this.loadSanPham();
+        },
+        methods :   {
+            addSP() {
+                this.add.mo_ta = CKEDITOR.instances['mo_ta'].getData();
+                axios
+                    .post('/admin/san-pham/create', this.add)
+                    .then((res) => {
+                        if(res.data.status) {
+                            toastr.success(res.data.message);
+                            $("#formdata").trigger("reset");
+                            CKEDITOR.instances['mo_ta'].setData('');
+
+                        }
+                    })
+                    .catch((res) => {
+                        $.each(res.response.data.errors, function(k, v) {
+                            toastr.error(v[0]);
+                        });
+                    });
+            },
+
+            loadDanhMuc() {
+                axios
+                    .get('/admin/danh-muc/data')
+                    .then((res) => {
+                        this.listDanhMuc = res.data.list;
+                    });
+            },
+
+            loadSanPham() {
+                axios
+                    .get('/admin/san-pham/data')
+                    .then((res) => {
+                        this.listSanPham = res.data.data;
+                    });
+            },
+
+            updateSanPham() {
+                axios
+                    .post('/admin/san-pham/update', this.sp_edit)
+                    .then((res) => {
+                        if(res.data.status) {
+                            toastr.success(res.data.message);
+                            this.loadSanPham();
+                        }
+                    })
+                    .catch((res) => {
+                        $.each(res.response.data.errors, function(k, v) {
+                        toastr.error(v[0]);
+                    });
+                });
+            },
+
+            edit(v) {
+                this.sp_edit = v;
+                CKEDITOR.instances['mo_ta_edit'].setData(v.mo_ta);
+            },
+
+            deleteSanPham() {
+                axios
+                    .post('/admin/san-pham/delete', this.sp_delete)
+                    .then((res) => {
+                        toastr.success(res.data.message);
+                        this.loadSanPham();
+                    })
+                    .catch((res) => {
+                        $.each(res.response.data.errors, function(k, v) {
+                            toastr.error(v[0]);
+                        });
+                    });
+            },
+
+            changeStatus(id){
+                axios
+                    .get('/admin/san-pham/change-status/' + id)
+                    .then((res) => {
+                        if(res.data.status) {
+                            toastr.success(res.data.message);
+                            this.loadSanPham();
+                        }else{
+                            toastr.success(res.data.message);
+                        }
+                    })
+            },
+            toSlug(str) {
+                str = str.toLowerCase();
+                str = str
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '');
+                str = str.replace(/[đĐ]/g, 'd');
+                str = str.replace(/([^0-9a-z-\s])/g, '');
+                str = str.replace(/(\s+)/g, '-');
+                str = str.replace(/-+/g, '-');
+                str = str.replace(/^-+|-+$/g, '');
+                return str;
+            },
+
+            chuyenThanhSlug(){
+                this.slug = this.toSlug(this.add.ten_san_pham);
+            },
+
+            chuyenThanhSlugEdit(){
+                this.edit.slug_san_pham = this.toSlug(this.edit.ten_san_pham);
+            },
+
+        },
+
+    });
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('mo_ta');
+    CKEDITOR.replace('mo_ta_edit');
+</script>
+<script>
+    var route_prefix = "/laravel-filemanager";
+</script>
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>
+    $("#lfm").filemanager('image', {prefix : route_prefix});
+</script>
+@endsection
