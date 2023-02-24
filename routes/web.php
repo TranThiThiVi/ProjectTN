@@ -1,13 +1,17 @@
 <?php
 
 use App\Http\Controllers\DanhMucController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [TestController::class, 'index']);
+// Route::get('/', [TestController::class, 'index']);
+Route::get('/', [HomePageController::class, 'viewHomePage']);
+Route::get('/register', [HomePageController::class, 'viewRegister']);
+Route::get('/login', [HomePageController::class, 'viewLogin']);
 
 Route::group(['prefix' => '/admin'], function() {
 
