@@ -37,31 +37,33 @@
                 Danh Sách Danh Mục
             </div>
             <div class="card-body">
-                <table class="table table-bordered" id="">
-                    <thead>
-                        <tr>
-                            <th class="text-center">#</th>
-                            <th class="text-center">Tên Danh Mục</th>
-                            <th class="text-center">Tình Trạng</th>
-                            <th class="text-center">Danh Mục Cha</th>
-                            <th class="text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(value, key) in listDanhMuc">
-                            <th class="text-center align-middle">@{{ key + 1 }}</th>
-                            <td class="align-middle">@{{ value.ten_danh_muc }}</td>
-                            <td class="text-center">
-                                <button class="btn btn-success" v-on:click="changeStatus(value.id)" v-if="value.is_open == 1">Hiển Thị</button>
-                                <button class="btn btn-danger" v-on:click="changeStatus(value.id)" v-else>Tạm tắt</button>
-                            </td>
-                            <td class="align-middle">@{{ value.ten_danh_muc_cha == null ? 'Root' : value.ten_danh_muc_cha }}</td>
-                            <td class="text-center">
-                                <button class="btn btn-primary" v-on:click="edit = value" data-toggle="modal" data-target="#editModal">Cập nhật</button>
-                                <button class="btn btn-danger" v-on:click="xoa_danh_muc = value" data-toggle="modal" data-target="#xoaModal">Xóa</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                <table class="table table-bordered">
+                    <table class="table table-bordered" id="">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-center">Tên Danh Mục</th>
+                                <th class="text-center">Tình Trạng</th>
+                                <th class="text-center">Danh Mục Cha</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(value, key) in listDanhMuc">
+                                <th class="text-center align-middle">@{{ key + 1 }}</th>
+                                <td class="align-middle">@{{ value.ten_danh_muc }}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-success" v-on:click="changeStatus(value.id)" v-if="value.is_open == 1">Hiển Thị</button>
+                                    <button class="btn btn-danger" v-on:click="changeStatus(value.id)" v-else>Tạm tắt</button>
+                                </td>
+                                <td class="align-middle">@{{ value.ten_danh_muc_cha == null ? 'Root' : value.ten_danh_muc_cha }}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-primary" v-on:click="edit = value" data-toggle="modal" data-target="#editModal">Cập nhật</button>
+                                    <button class="btn btn-danger" v-on:click="xoa_danh_muc = value" data-toggle="modal" data-target="#xoaModal">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </table>
             </div>
         </div>
