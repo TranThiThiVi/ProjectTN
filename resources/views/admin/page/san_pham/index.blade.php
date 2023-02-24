@@ -12,7 +12,7 @@
                 <label>Slug Sản Phẩm</label>
                 <input v-model="slug" type="text" class="form-control mt-1" type="text">
                 <label>Số Lượng</label>
-                <input v-model="add.so_luong" class="form-control mt-1" type="text">
+                <input v-model="add.so_luong" class="form-control mt-1" type="number">
                 <label>Hình Ảnh</label>
                 <div class="input-group">
                     <input id="hinh_anh" class="form-control" type="text" name="filepath">
@@ -41,7 +41,7 @@
                     <option value="0">Dừng kinh doanh</option>
                 </select>
             </div>
-            <div class="card-footer text-end">
+            <div class="card-footer text-right">
                 <button type="button" v-on:click="addSP()" class="btn btn-primary">Thêm Mới</button>
             </div>
         </div>
@@ -73,12 +73,16 @@
                                 <th class="text-center align-middle">@{{ k + 1 }}</th>
                                 <td class="align-middle">@{{ v.ten_san_pham }}</td>
                                 <td class="align-middle">@{{ v.so_luong }}</td>
-                                <td class="align-middle">@{{ v.hinh_anh }}</td>
-                                <td class="align-middle">@{{ v.mo_ta }}</td>
+                                <td class="align-middle">
+                                    <img v-bind:src="v.hinh_anh" class="img-fluid" style="max-width: 200px;">
+                                </td>
+                                <td class="text-center align-middle">
+                                    <button v-on:click="modal = v, hienMoTa()"  data-toggle="modal" data-target="#mo_ta_chi_tiet" class="btn btn-primary"><i style="padding-left: 6px" class="fa-sharp fa-solid fa-info"></i></button>
+                                </td>
                                 <td class="align-middle">@{{ v.gia_ban }}</td>
                                 <td class="align-middle">@{{ v.gia_khuyen_mai }}</td>
                                 <td class="align-middle text-nowrap">@{{ v.ten_danh_muc }}</td>
-                                <td class="text-center">
+                                <td class="text-center align-middle">
                                     <button class="btn btn-success" v-on:click="changeStatus(v.id)" v-if="v.is_open == 1">Còn Kinh Doanh</button>
                                     <button class="btn btn-danger" v-on:click="changeStatus(v.id)" v-else>Dừng Kinh Doanh</button>
                                 </td>
@@ -166,6 +170,22 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="mo_ta_chi_tiet" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mô Tả</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span id="hienMoTa"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('js')
 <script>
@@ -179,6 +199,7 @@
             sp_delete      : {},
             slug           : '',
             ten_san_pham   : '',
+            modal          : {},
         },
         created()   {
             this.loadDanhMuc();
@@ -288,6 +309,10 @@
 
             chuyenThanhSlugEdit(){
                 this.edit.slug_san_pham = this.toSlug(this.edit.ten_san_pham);
+            },
+
+            hienMoTa(){
+                $('#hienMoTa').html(this.modal.mo_ta);
             },
 
         },

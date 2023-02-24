@@ -18,7 +18,7 @@
      </div>
       <!-- Wrapper END -->
       <!-- Footer -->
-      @include('admin.share.foot')
+
       <nav class="iq-float-menu">
          <input type="checkbox" href="#" class="iq-float-menu-open" name="menu-open" id="menu-open" />
          <label class="iq-float-menu-open-button" for="menu-open">
@@ -31,6 +31,7 @@
          <button class="iq-float-menu-item bg-warning" data-toggle="tooltip" data-placement="top" title="Comming Soon"><i class="ri-palette-line"></i></button>
       </nav>
       </div>
+      @include('admin.share.foot')
       <!-- Sidebar  -->
 
       <!-- Footer END -->
