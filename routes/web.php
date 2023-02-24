@@ -1,17 +1,18 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DanhMucController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TinTucController;
 use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/', [TestController::class, 'index']);
-Route::get('/', [HomePageController::class, 'viewHomePage']);
-Route::get('/register', [HomePageController::class, 'viewRegister']);
-Route::get('/login', [HomePageController::class, 'viewLogin']);
+
+Route::get('/admin/login', [AdminController::class, 'viewLogin']);
+Route::post('/admin/login', [AdminController::class, 'actionLogin']);
 
 Route::group(['prefix' => '/admin'], function() {
 
@@ -33,6 +34,19 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/delete', [SanPhamController::class, 'destroy']);
         Route::post('/update', [SanPhamController::class, 'update']);
         Route::get('/change-status/{id}', [SanPhamController::class, 'changeStatus']);
+    });
+    Route::group(['prefix' => '/tai-khoan'], function() {
+        Route::get('/index', [AdminController::class, 'index']);
+        Route::post('/create', [AdminController::class, 'store']);
+        Route::get('/data', [AdminController::class, 'data']);
+    });
+    Route::group(['prefix' => '/tin-tuc'], function() {
+        Route::get('/index', [TinTucController::class, 'index']);
+        Route::post('/create', [TinTucController::class, 'store']);
+        Route::get('/data', [TinTucController::class, 'data']);
+        Route::post('/delete', [TinTucController::class, 'destroy']);
+        Route::post('/update', [TinTucController::class, 'update']);
+        Route::get('/change-status/{id}', [TinTucController::class, 'changeStatus']);
     });
 
 });
