@@ -23,7 +23,9 @@
                     </span>
                 </div>
                 <div id="holder" style="margin-top:15px;max-height:100px;"></div>
-                <label>Mô tả</label>
+                <label>Mô tả ngắn</label>
+                <textarea class="form-control" v-model="add.mo_ta_ngan" cols="30" rows="10"></textarea>
+                <label>Mô tả chi tiết</label>
                 <input v-model="add.mo_ta" id="mo_ta" name="mo_ta" class="form-control mt-1" type="text">
                 <label>Giá bán</label>
                 <input v-model="add.gia_ban" class="form-control mt-1" type="number">
@@ -74,7 +76,7 @@
                                 <td class="align-middle">@{{ v.ten_san_pham }}</td>
                                 <td class="align-middle">@{{ v.so_luong }}</td>
                                 <td class="align-middle">
-                                    <img v-bind:src="v.hinh_anh" class="img-fluid" style="max-width: 200px;">
+                                    <img v-bind:src="v.hinh_anh.split(',')[0]" class="img-fluid" style="max-width: 200px;">
                                 </td>
                                 <td class="text-center align-middle">
                                     <button v-on:click="modal = v, hienMoTa()"  data-toggle="modal" data-target="#mo_ta_chi_tiet" class="btn btn-primary"><i style="padding-left: 6px" class="fa-sharp fa-solid fa-info"></i></button>
@@ -107,8 +109,6 @@
               </button>
             </div>
             <div class="modal-body">
-                <form id="formdataedit" v-on:submit.prevent="update()">
-                <input v-model="sp_edit.id" name="id"  class="form-control mt-1" type="hidden">
                 <label>Tên Sản Phẩm</label>
                 <input v-model="sp_edit.ten_san_pham" name="ten_san_pham" class="form-control mt-1" type="text">
                 <label>Slug Sản Phẩm</label>
@@ -117,14 +117,14 @@
                 <input v-model="sp_edit.so_luong" class="form-control mt-1" type="text">
                 <label>Hình Ảnh</label>
                 <div class="input-group">
-                    <input v-model="sp_edit.hinh_anh" id="hinh_anh" class="form-control" type="text" name="filepath">
+                    <input v-model="sp_edit.hinh_anh" id="hinh_anh_edit" class="form-control" type="text" name="filepath">
                     <span class="input-group-prepend">
-                        <a id="lfm" data-input="hinh_anh" data-preview="holder" class="btn btn-primary">
+                        <a id="lfm_edit" data-input="hinh_anh_edit" data-preview="holder_edit" class="btn btn-primary">
                             <i class="fa fa-picture-o"></i> Choose
                         </a>
                     </span>
                 </div>
-                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                <div id="holder_edit" style="margin-top:15px;max-height:100px;"></div>
                 <label>Mô tả</label>
                 <input id="mo_ta_edit" name="mo_ta_edit" class="form-control mt-1" type="text">
                 <label>Giá bán</label>
@@ -142,7 +142,6 @@
                     <option value="1">Còn kinh doanh</option>
                     <option value="0">Dừng kinh doanh</option>
                 </select>
-            </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -244,6 +243,9 @@
             },
 
             updateSanPham() {
+                this.sp_edit.hinh_anh = $("#hinh_anh_edit").val();
+                this.sp_edit.mo_ta = CKEDITOR.instances['mo_ta_edit'].getData();
+                console.log(this.sp_edit);
                 axios
                     .post('/admin/san-pham/update', this.sp_edit)
                     .then((res) => {
@@ -318,7 +320,7 @@
         },
 
     });
-    </script>
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.19.1/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('mo_ta');
@@ -330,5 +332,6 @@
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script>
     $("#lfm").filemanager('image', {prefix : route_prefix});
+    $("#lfm_edit").filemanager('image', {prefix : route_prefix});
 </script>
 @endsection

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('id_danh_muc');
             $table->string('hinh_anh');
             $table->longText('mo_ta');
+            $table->longText('mo_ta_ngan');
             $table->integer('so_luong')->default(0);
             $table->timestamps();
         });

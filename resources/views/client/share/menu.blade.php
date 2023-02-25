@@ -16,30 +16,17 @@
                     </ul>
                 </div>
                 <div class="top-right pull-right">
-                    <div class="language">
-                        <div class="lang-btn">
-                            <span class="flag"><img src="/assets_client/images/icons/icon-lang.png" alt="" title="English"></span>
-                            <span class="txt">English</span>
-                            <span class="arrow fa fa-angle-down"></span>
-                        </div>
-                        <div class="lang-dropdown">
-                            <ul>
-                                <li><a href="index.html">German</a></li>
-                                <li><a href="index.html">Italian</a></li>
-                                <li><a href="index.html">Chinese</a></li>
-                                <li><a href="index.html">Russian</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    @if (Auth::guard('client')->check())
                     <div class="price-box">
-                        <span>USD</span>
+                        <span>Chào bạn, {{Auth::guard('client')->user()->ho_va_ten}}</span>
                         <ul class="price-list clearfix">
-                            <li><a href="index.html">USD</a></li>
-                            <li><a href="index.html">UK</a></li>
-                            <li><a href="index.html">URO</a></li>
-                            <li><a href="index.html">Spanish</a></li>
+                            <li><a href="/client/logout">Đăng Xuất</a></li>
                         </ul>
                     </div>
+                    @else
+                    <a href="/login"><span class="text-dark">Đăng Nhập</span></a>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -47,7 +34,7 @@
     <div class="header-upper">
         <div class="auto-container">
             <div class="upper-inner">
-                <figure class="logo-box"><a href="index.html"><img src="/assets_client/images/logo.png" alt=""></a></figure>
+                <figure class="logo-box"><a href="/"><img src="/assets_client/images/logo.png" alt=""></a></figure>
                 <div class="search-info">
                     <div class="select-box">
                         <select class="wide">
@@ -134,7 +121,7 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="index.html">Home</a>
+                                {{-- <li class="current dropdown"><a href="index.html">Home</a>
                                     <ul>
                                         <li><a href="index.html">Home Page 01</a></li>
                                         <li><a href="index-2.html">Home Page 02</a></li>
@@ -241,8 +228,13 @@
                                         <li><a href="blog-details.html">Blog Details 01</a></li>
                                         <li><a href="blog-details-2.html">Blog Details 02</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                </li> --}}
+                                @if (isset($danhMuc))
+                                @foreach ($danhMuc as $key => $value )
+                                <li><a href="/client/danh-muc/{{$value->id}}">{{$value->ten_danh_muc}}</a></li>
+                                @endforeach
+                                @endif
+                                <li><a href="contact.html">Liên Lạc</a></li>
                             </ul>
                         </div>
                     </nav>

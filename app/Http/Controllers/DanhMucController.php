@@ -70,6 +70,7 @@ class DanhMucController extends Controller
     }
     public function destroy(DeleteDanhMucRequest $request)
     {
+        dd($request->all());
         DanhMuc::where('id', $request->id)->delete();
 
         return response()->json([

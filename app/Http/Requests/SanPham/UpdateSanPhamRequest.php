@@ -19,7 +19,7 @@ class UpdateSanPhamRequest extends FormRequest
             'hinh_anh'          =>  'required',
             'so_luong'          =>  'required|numeric',
             'mo_ta'             =>  'required|min:20',
-            'id_danh_muc'       =>  'required|exists:danh_mus,id',
+            'id_danh_muc'       =>  'required|exists:danh_mucs,id',
             'is_open'           =>  'required|boolean',
             'gia_ban'           =>  'required|numeric|min:0',
             'gia_khuyen_mai'    =>  'nullable|numeric|min:0',
