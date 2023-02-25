@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SanPham;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
     public function viewHomePage()
     {
-        return view('client.share.master');
+        $sanPham = SanPham::where('is_open', 1)->get();
+        return view('client.page.homepage', compact('sanPham'));
     }
 
     public function viewRegister()
@@ -19,5 +21,18 @@ class HomePageController extends Controller
     public function viewLogin()
     {
         return view('client.page.auth.login');
+    }
+
+    public function sanPhamDanhMuc($id)
+    {
+        $sanPham = SanPham::where('id_danh_muc', $id)->get();
+
+        dd($sanPham);
+    }
+
+    public function chitietSanPham($id)
+    {
+        $sanPham = SanPham::find($id);
+        return view('client.page.chitietsanpham', compact('sanPham'));
     }
 }

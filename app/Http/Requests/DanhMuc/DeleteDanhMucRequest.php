@@ -14,7 +14,7 @@ class DeleteDanhMucRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'    =>  'required|exists:danh_muc,id',
+            'id'    =>  'required|exists:danh_mucs,id',
         ];
     }
 

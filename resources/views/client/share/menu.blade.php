@@ -134,7 +134,7 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="index.html">Home</a>
+                                {{-- <li class="current dropdown"><a href="index.html">Home</a>
                                     <ul>
                                         <li><a href="index.html">Home Page 01</a></li>
                                         <li><a href="index-2.html">Home Page 02</a></li>
@@ -241,8 +241,13 @@
                                         <li><a href="blog-details.html">Blog Details 01</a></li>
                                         <li><a href="blog-details-2.html">Blog Details 02</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                </li> --}}
+                                @if (isset($danhMuc))
+                                @foreach ($danhMuc as $key => $value )
+                                <li><a href="/client/danh-muc/{{$value->id}}">{{$value->ten_danh_muc}}</a></li>
+                                @endforeach
+                                @endif
+                                <li><a href="contact.html">Liên Lạc</a></li>
                             </ul>
                         </div>
                     </nav>

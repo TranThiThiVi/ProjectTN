@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DanhMucController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\SanPhamController;
@@ -10,14 +11,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
+Route::get('/', [HomePageController::class, 'viewHomePage']);
+Route::get('/register', [HomePageController::class, 'viewRegister']);
+Route::post('/register', [ClientController::class, 'actionRegister']);
+Route::get('/login', [HomePageController::class, 'viewLogin']);
+Route::post('/login', [ClientController::class, 'actionLogin']);
 Route::get('/admin/login', [AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [AdminController::class, 'actionLogin']);
+Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
+Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
 
 Route::group(['prefix' => '/admin'], function() {
-
     Route::group(['prefix' => '/danh-muc'], function() {
-
         Route::get('/index', [DanhMucController::class, 'index']);
         Route::post('/create', [DanhMucController::class, 'store']);
         Route::get('/change-status/{id}', [DanhMucController::class, 'changeStatus']);
