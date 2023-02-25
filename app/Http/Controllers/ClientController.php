@@ -34,4 +34,13 @@ class ClientController extends Controller
             'status'    => $check,
         ]);
     }
+
+    public function logout()
+    {
+        Auth::guard('client')->logout();
+
+        toastr()->success('Bạn đã đăng xuất tài khoản !');
+        return redirect('/');
+
+    }
 }

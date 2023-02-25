@@ -16,30 +16,17 @@
                     </ul>
                 </div>
                 <div class="top-right pull-right">
-                    <div class="language">
-                        <div class="lang-btn">
-                            <span class="flag"><img src="/assets_client/images/icons/icon-lang.png" alt="" title="English"></span>
-                            <span class="txt">English</span>
-                            <span class="arrow fa fa-angle-down"></span>
-                        </div>
-                        <div class="lang-dropdown">
-                            <ul>
-                                <li><a href="index.html">German</a></li>
-                                <li><a href="index.html">Italian</a></li>
-                                <li><a href="index.html">Chinese</a></li>
-                                <li><a href="index.html">Russian</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    @if (Auth::guard('client')->check())
                     <div class="price-box">
-                        <span>USD</span>
+                        <span>Chào bạn, {{Auth::guard('client')->user()->ho_va_ten}}</span>
                         <ul class="price-list clearfix">
-                            <li><a href="index.html">USD</a></li>
-                            <li><a href="index.html">UK</a></li>
-                            <li><a href="index.html">URO</a></li>
-                            <li><a href="index.html">Spanish</a></li>
+                            <li><a href="/client/logout">Đăng Xuất</a></li>
                         </ul>
                     </div>
+                    @else
+                    <a href="/login"><span class="text-dark">Đăng Nhập</span></a>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -47,7 +34,7 @@
     <div class="header-upper">
         <div class="auto-container">
             <div class="upper-inner">
-                <figure class="logo-box"><a href="index.html"><img src="/assets_client/images/logo.png" alt=""></a></figure>
+                <figure class="logo-box"><a href="/"><img src="/assets_client/images/logo.png" alt=""></a></figure>
                 <div class="search-info">
                     <div class="select-box">
                         <select class="wide">

@@ -23,7 +23,9 @@
                     </span>
                 </div>
                 <div id="holder" style="margin-top:15px;max-height:100px;"></div>
-                <label>Mô tả</label>
+                <label>Mô tả ngắn</label>
+                <textarea class="form-control" v-model="add.mo_ta_ngan" cols="30" rows="10"></textarea>
+                <label>Mô tả chi tiết</label>
                 <input v-model="add.mo_ta" id="mo_ta" name="mo_ta" class="form-control mt-1" type="text">
                 <label>Giá bán</label>
                 <input v-model="add.gia_ban" class="form-control mt-1" type="number">

@@ -20,6 +20,7 @@ class SanPham extends Model
         'id_danh_muc',
         'hinh_anh',
         'mo_ta',
+        'mo_ta_ngan',
         'so_luong',
     ];
 }

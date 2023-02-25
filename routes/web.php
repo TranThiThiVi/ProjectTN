@@ -18,6 +18,7 @@ Route::get('/login', [HomePageController::class, 'viewLogin']);
 Route::post('/login', [ClientController::class, 'actionLogin']);
 Route::get('/admin/login', [AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [AdminController::class, 'actionLogin']);
+Route::get('/client/logout', [ClientController::class, 'logout']);
 Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
 Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
 

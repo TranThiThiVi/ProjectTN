@@ -27,7 +27,8 @@ class HomePageController extends Controller
     {
         $sanPham = SanPham::where('id_danh_muc', $id)->get();
 
-        dd($sanPham);
+        return view('client.page.sanphandanhmuc', compact('sanPham'));
+
     }
 
     public function chitietSanPham($id)
