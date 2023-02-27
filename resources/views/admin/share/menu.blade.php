@@ -18,6 +18,8 @@
           <ul id="iq-sidebar-toggle" class="iq-menu">
              <li><a href="/admin/danh-muc/index" class="iq-waves-effect"><i class="ri-calendar-2-line"></i><span>Danh Mục</span></a></li>
              <li><a href="/admin/san-pham/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Sản Phẩm</span></a></li>
+             <li><a href="/admin/tin-tuc/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Tin Tức</span></a></li>
+             <li><a href="/admin/tai-khoan/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Tài Khoản Admin</span></a></li>
              {{-- <li><a href="/admin/logout" class="iq-waves-effect"><i class="ri-login-box-line"></i><span>Đăng Xuất</span></a></li> --}}
              {{-- <li>
                 <a href="#ecommerce" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-shopping-cart-line"></i><span>E-commerce</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>

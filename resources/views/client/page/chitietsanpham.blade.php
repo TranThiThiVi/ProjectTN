@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div class="product-info">
-                        <h3>{{$sanPham->tieu_de}}</h3>
+                        <h3>{{$sanPham->ten_san_pham}}</h3>
                         <div class="customer-review clearfix">
                             <ul class="rating-box clearfix">
                                 <li><i class="flaticon-star"></i></li>
@@ -44,9 +44,9 @@
                                 <li><i class="flaticon-star"></i></li>
                             </ul>
                         </div>
-                        <span class="item-price">{{ number_format($sanPham->gia_thang, 0) }} VNĐ</span>
+                        <span class="item-price">{{ number_format($sanPham->gia_ban, 0) }} VNĐ</span>
                         <div class="text">
-                            <p>{!!$sanPham->mo_ta_chi_tiet!!}</p>
+                            <p>{!!$sanPham->mo_ta_ngan!!}</p>
                         </div>
                         <div class="othre-options clearfix">
                             @if (Auth::guard('client')->check())
@@ -91,7 +91,7 @@
                 <div class="tabs-content">
                     <div class="tab" id="tab-1">
                         <div class="text">
-                            <p>{!!$sanPham->mo_ta_chi_tiet!!}</p>
+                            <p>{!!$sanPham->mo_ta!!}</p>
                         </div>
                     </div>
                     <div class="tab active-tab" id="tab-2">

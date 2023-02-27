@@ -13,8 +13,8 @@ class AdminMiddleware
         if(Auth::guard('admin')->check()){
             return $next($request);
         }else{
-            return redirect('/admin/login');
             toastr()->error('Bạn cần phải đăng nhập trước !');
+            return redirect('/admin/login');
         }
     }
 }
