@@ -36,4 +36,9 @@ class HomePageController extends Controller
         $sanPham = SanPham::find($id);
         return view('client.page.chitietsanpham', compact('sanPham'));
     }
+
+    public function Cart()
+    {
+        return view('client.page.cart');
+    }
 }

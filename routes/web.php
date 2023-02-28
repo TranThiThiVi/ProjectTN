@@ -25,6 +25,7 @@ Route::get('/admin/logout', [AdminController::class, 'logout']);
 Route::get('/client/logout', [ClientController::class, 'logout']);
 Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
 Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
+Route::get('/cart', [HomePageController::class, 'Cart']);
 
 Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmiddleware'
     Route::group(['prefix' => '/danh-muc'], function() {

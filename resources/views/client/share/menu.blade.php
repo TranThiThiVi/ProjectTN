@@ -55,9 +55,11 @@
                 <ul class="menu-right-content clearfix">
                     <li><a href="index.html"><i class="flaticon-like"></i></a></li>
                     <li><a href="index.html"><i class="flaticon-user"></i></a></li>
+                    @if (Auth::guard('client')->check())
                     <li class="shop-cart">
-                        <a href="shop.html"><i class="flaticon-shopping-cart-1"></i><span>3</span></a>
+                        <a href="/cart"><i class="flaticon-shopping-cart-1"></i><span>3</span></a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>
