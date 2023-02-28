@@ -25,9 +25,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $danhMuc = DanhMuc::where('is_open',1)->get();
+        $danhMucCha = DanhMuc::where('is_open',1)
+                             ->where('id_danh_muc_cha', 0)
+                             ->get();
+        $danhMucCon = DanhMuc::where('is_open', 1)
+                             ->where('id_danh_muc_cha', '>', 0)
+                             ->get();
         $SanPham = SanPham::where('is_open',1)->take(4)->get();
-        View()->share('danhMuc', $danhMuc);
+        // dd($danhMucCha);
+        View()->share('danhMucCha', $danhMucCha);
         View()->share('SanPham', $SanPham);
+        View()->share('danhMucCon', $danhMucCon);
     }
 }
