@@ -210,6 +210,7 @@
                    <div class="caption">
                     @if (Auth::guard('admin')->check())
                       <h6 class="mb-0 line-height text-white">Chào bạn, {{Auth::guard('admin')->user()->ho_va_ten}}</h6>
+
                    </div>
                    @endif
                 </a>

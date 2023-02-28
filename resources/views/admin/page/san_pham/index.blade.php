@@ -81,8 +81,8 @@
                                 <td class="text-center align-middle">
                                     <button v-on:click="modal = v, hienMoTa()"  data-toggle="modal" data-target="#mo_ta_chi_tiet" class="btn btn-primary"><i style="padding-left: 6px" class="fa-sharp fa-solid fa-info"></i></button>
                                 </td>
-                                <td class="align-middle">@{{ v.gia_ban }}</td>
-                                <td class="align-middle">@{{ v.gia_khuyen_mai }}</td>
+                                <td class="align-middle text-nowrap">@{{ number_format(v.gia_ban, 0, ',', '.') }} vnđ</td>
+                                <td class="align-middle">@{{ number_format(v.gia_khuyen_mai, 0, ',', '.') }} vnđ</td>
                                 <td class="align-middle text-nowrap">@{{ v.ten_danh_muc }}</td>
                                 <td class="text-center align-middle">
                                     <button class="btn btn-success" v-on:click="changeStatus(v.id)" v-if="v.is_open == 1">Còn Kinh Doanh</button>
@@ -125,6 +125,8 @@
                     </span>
                 </div>
                 <div id="holder_edit" style="margin-top:15px;max-height:100px;"></div>
+                <label>Mô tả ngắn</label>
+                <textarea class="form-control" v-model="sp_edit.mo_ta_ngan" cols="30" rows="10"></textarea>
                 <label>Mô tả</label>
                 <input id="mo_ta_edit" name="mo_ta_edit" class="form-control mt-1" type="text">
                 <label>Giá bán</label>
@@ -224,6 +226,22 @@
                             toastr.error(v[0]);
                         });
                     });
+            },
+            number_format(number, decimals = 2, dec_point = ",", thousands_sep = ".") {
+                var n = number,
+                c = isNaN((decimals = Math.abs(decimals))) ? 2 : decimals;
+                var d = dec_point == undefined ? "," : dec_point;
+                var t = thousands_sep == undefined ? "." : thousands_sep,
+                    s = n < 0 ? "-" : "";
+                var i = parseInt((n = Math.abs(+n || 0).toFixed(c))) + "",
+                    j = (j = i.length) > 3 ? j % 3 : 0;
+
+                return (s +(j ? i.substr(0, j) + t : "") +i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) +(c? d +
+                        Math.abs(n - i)
+                            .toFixed(c)
+                            .slice(2)
+                        : "")
+                );
             },
 
             loadDanhMuc() {
