@@ -16,13 +16,17 @@ Route::get('/register', [HomePageController::class, 'viewRegister']);
 Route::post('/register', [ClientController::class, 'actionRegister']);
 Route::get('/login', [HomePageController::class, 'viewLogin']);
 Route::post('/login', [ClientController::class, 'actionLogin']);
+
+
 Route::get('/admin/login', [AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [AdminController::class, 'actionLogin']);
+Route::get('/admin/logout', [AdminController::class, 'logout']);
+
 Route::get('/client/logout', [ClientController::class, 'logout']);
 Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
 Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
 
-Route::group(['prefix' => '/admin'], function() {
+Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmiddleware'
     Route::group(['prefix' => '/danh-muc'], function() {
         Route::get('/index', [DanhMucController::class, 'index']);
         Route::post('/create', [DanhMucController::class, 'store']);
@@ -32,7 +36,6 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/delete', [DanhMucController::class, 'destroy']);
 
     });
-
     Route::group(['prefix' => '/san-pham'], function() {
         Route::get('/index', [SanPhamController::class, 'index']);
         Route::post('/create', [SanPhamController::class, 'store']);
@@ -45,6 +48,8 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/index', [AdminController::class, 'index']);
         Route::post('/create', [AdminController::class, 'store']);
         Route::get('/data', [AdminController::class, 'data']);
+        Route::post('/delete', [AdminController::class, 'destroy']);
+        Route::post('/update', [AdminController::class, 'update']);
     });
     Route::group(['prefix' => '/tin-tuc'], function() {
         Route::get('/index', [TinTucController::class, 'index']);
@@ -53,6 +58,14 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/delete', [TinTucController::class, 'destroy']);
         Route::post('/update', [TinTucController::class, 'update']);
         Route::get('/change-status/{id}', [TinTucController::class, 'changeStatus']);
+    });
+    Route::group(['prefix' => '/client'], function() {
+        Route::get('/quan-ly-khach-hang', [ClientController::class, 'ViewKH']);
+        Route::get('/getData', [ClientController::class, 'getData']);
+        Route::post('/delete', [ClientController::class, 'destroy']);
+        Route::post('/update', [ClientController::class, 'update']);
+
+
     });
 
 });
