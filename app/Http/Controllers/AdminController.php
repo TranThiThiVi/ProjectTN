@@ -32,7 +32,8 @@ class AdminController extends Controller
         return response()->json([
             'data'  => $data,
         ]);
-    } public function viewLogin()
+    }
+    public function viewLogin()
     {
         return view('admin.login');
     }
@@ -47,6 +48,35 @@ class AdminController extends Controller
         return response()->json([
             'status'    => $check,
         ]);
+    }
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+
+        toastr()->success('Bạn đã đăng xuất tài khoản !');
+        return redirect('/admin/login');
+
+    }
+    public function destroy(Request $request)
+    {
+        Admin::where('id', $request->id)->first()->delete();
+
+        return response()->json([
+            'status'    => true,
+        ]);
+    }
+    public function update(Request $request)
+    {
+        $data      = $request->all();
+        $TaiKhoan = Admin::find($request->id);
+        $data['password'] = bcrypt($data['password']);
+        $TaiKhoan->update($data);
+
+        return response()->json([
+            'status'    => true,
+            'message'   => 'Đã cập nhật thành công!',
+        ]);
+
     }
 
 }

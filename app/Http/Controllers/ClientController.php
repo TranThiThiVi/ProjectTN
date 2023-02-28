@@ -43,4 +43,40 @@ class ClientController extends Controller
         return redirect('/');
 
     }
+
+    public function getData()
+    {
+        $data = Client::get();
+
+        return response()->json([
+            'data'  => $data,
+        ]);
+    }
+    public function ViewKH()
+    {
+        return view('admin.page.quan_ly_khach_hang.index');
+    }
+
+    public function destroy(Request $request)
+    {
+        Client::where('id', $request->id)->first()->delete();
+
+        return response()->json([
+            'status'    => true,
+        ]);
+    }
+    public function update(Request $request)
+    {
+        $data      = $request->all();
+        $KhachHang = Client::find($request->id);
+        $data['password'] = bcrypt($data['password']);
+        $KhachHang->update($data);
+
+        return response()->json([
+            'status'    => true,
+            'message'   => 'Đã cập nhật khách hàng thành công!',
+        ]);
+
+    }
+
 }

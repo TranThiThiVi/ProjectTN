@@ -137,6 +137,7 @@
                     .then((res) => {
                         if(res.data.status) {
                             toastr.success("Đăng nhập thành công!");
+                            window.location.assign("/admin/danh-muc/index")
                         } else {
                             toastr.error("Tài khoản hoặc mật khẩu không đúng!");
                         }
