@@ -121,120 +121,26 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                {{-- <li class="current dropdown"><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home Page 01</a></li>
-                                        <li><a href="index-2.html">Home Page 02</a></li>
-                                        <li><a href="index-3.html">Home Page 03</a></li>
-                                        <li><a href="index-4.html">Home Page 04</a></li>
-                                        <li><a href="index-5.html">Home Page 05</a></li>
-                                        <li><a href="index-rtl.html">Home RTL</a></li>
-                                        <li><a href="index-onepage.html">Home OnePage</a></li>
-                                        <li class="dropdown"><a href="index.html">Header Style</a>
-                                            <ul>
-                                                <li><a href="index.html">Header Style 01</a></li>
-                                                <li><a href="index-2.html">Header Style 02</a></li>
-                                                <li><a href="index-4.html">Header Style 03</a></li>
-                                                <li><a href="index-5.html">Header Style 04</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                @if (isset($danhMucCha))
+                                @foreach ($danhMucCha as $key => $value )
+                                <li class="current dropdown"><a href="/client/danh-muc/{{$value->id}}">{{$value->ten_danh_muc}}</a>
+                                    @foreach ($danhMucCon as $k => $v )
+                                        @if ($v->id_danh_muc_cha == $value->id)
+                                        <ul>
+                                            <li><a href="/client/danh-muc/{{$v->id}}">{{$v->ten_danh_muc}}</a></li>
+                                        </ul>
+                                        @endif
+                                    @endforeach
                                 </li>
-                                <li class="dropdown"><a href="index.html">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="service.html">Our Service</a></li>
-                                        <li><a href="team.html">Our Team</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li><a href="error.html">404</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="index.html">Shop<span>Hot</span></a>
-                                    <div class="megamenu">
-                                        <div class="row clearfix">
-                                            <div class="col-lg-4 column">
-                                                <ul>
-                                                    <li><h4>Shop Page</h4></li>
-                                                    <li><a href="shop.html">Shop Page 01</a></li>
-                                                    <li><a href="shop-2.html">Shop Page 02</a></li>
-                                                    <li><a href="shop-3.html">Shop Page 03</a></li>
-                                                    <li><a href="shop-4.html">Shop Page 04</a></li>
-                                                    <li><a href="shop-5.html">Shop Page 05</a></li>
-                                                    <li><a href="shop-6.html">Shop Page 06</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 column">
-                                                <ul>
-                                                    <li><h4>Product Details Page</h4></li>
-                                                    <li><a href="product-details.html">Product Details 01</a></li>
-                                                    <li><a href="product-details-2.html">Product Details 02</a></li>
-                                                    <li><a href="product-details-3.html">Product Details 03</a></li>
-                                                    <li><a href="product-details-4.html">Product Details 04</a></li>
-                                                    <li><a href="product-details-5.html">Product Details 05</a></li>
-                                                    <li><a href="product-details-6.html">Product Details 06</a></li>
-                                                    <li><a href="product-details-7.html">Product Details 07</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 column">
-                                                <ul>
-                                                    <li><h4>Other Shop Page</h4></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
-                                                    <li><a href="checkout.html">Checkout Page</a></li>
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown"><a href="index.html">Elements</a>
-                                    <div class="megamenu">
-                                        <div class="row clearfix">
-                                            <div class="col-lg-6 column">
-                                                <ul>
-                                                    <li><h4>Elements 1</h4></li>
-                                                    <li><a href="category-element-1.html">Category 01</a></li>
-                                                    <li><a href="category-element-2.html">Category 02</a></li>
-                                                    <li><a href="category-element-3.html">Category 03</a></li>
-                                                    <li><a href="category-element-4.html">Category 04</a></li>
-                                                    <li><a href="shop-element-1.html">Shop 01</a></li>
-                                                    <li><a href="shop-element-2.html">Shop 02</a></li>
-                                                    <li><a href="shop-element-3.html">Shop 03</a></li>
-                                                    <li><a href="shop-element-4.html">Shop 04</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6 column">
-                                                <ul>
-                                                    <li><h4>Elements 2</h4></li>
-                                                    <li><a href="news-element-1.html">News 01</a></li>
-                                                    <li><a href="news-element-2.html">News 02</a></li>
-                                                    <li><a href="service-element-1.html">Service 01</a></li>
-                                                    <li><a href="service-element-2.html">Service 02</a></li>
-                                                    <li><a href="team-element-1.html">Team 01</a></li>
-                                                    <li><a href="team-element-2.html">Team 02</a></li>
-                                                    <li><a href="instagram-element.html">Instagram</a></li>
-                                                    <li><a href="clients-element.html">Clients</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown"><a href="index.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog.html">Blog 01</a></li>
-                                        <li><a href="blog-2.html">Blog 02</a></li>
-                                        <li><a href="blog-3.html">Blog 03</a></li>
-                                        <li><a href="blog-4.html">Blog 04</a></li>
-                                        <li><a href="blog-5.html">Blog 05</a></li>
-                                        <li><a href="blog-details.html">Blog Details 01</a></li>
-                                        <li><a href="blog-details-2.html">Blog Details 02</a></li>
-                                    </ul>
-                                </li> --}}
-                                @if (isset($danhMuc))
-                                @foreach ($danhMuc as $key => $value )
+                                @endforeach
+                                @endif
+
+                                {{-- @if (isset($danhMucCha))
+                                @foreach ($danhMucCha as $key => $value )
                                 <li><a href="/client/danh-muc/{{$value->id}}">{{$value->ten_danh_muc}}</a></li>
                                 @endforeach
                                 @endif
-                                <li><a href="contact.html">Liên Lạc</a></li>
+                                <li><a href="contact.html">Liên Lạc</a></li> --}}
                             </ul>
                         </div>
                     </nav>

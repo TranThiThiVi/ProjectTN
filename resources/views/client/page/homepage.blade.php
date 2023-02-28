@@ -1,6 +1,7 @@
 @extends('client.share.master')
 @section('content')
     @include('client.component.slide')
+
     <section class="shop-section pa-0">
         <div class="auto-container">
             <div class="inner-container sec-pad">
