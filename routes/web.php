@@ -22,7 +22,7 @@ Route::get('/client/logout', [ClientController::class, 'logout']);
 Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
 Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
 
-Route::group(['prefix' => '/admin', 'middleware' => 'adminmiddleware'], function() {
+Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/danh-muc'], function() {
         Route::get('/index', [DanhMucController::class, 'index']);
         Route::post('/create', [DanhMucController::class, 'store']);
