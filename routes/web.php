@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DanhMucController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\NhapKhoController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TinTucController;
@@ -59,6 +60,15 @@ Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmidd
         Route::post('/delete', [TinTucController::class, 'destroy']);
         Route::post('/update', [TinTucController::class, 'update']);
         Route::get('/change-status/{id}', [TinTucController::class, 'changeStatus']);
+    });
+    Route::group(['prefix' => '/nhap-kho'], function() {
+        Route::get('/index', [NhapKhoController::class, 'index']);
+        Route::get('/datasp', [NhapKhoController::class, 'dataSP']);
+        Route::get('/data', [NhapKhoController::class, 'dataDetail']);
+        Route::post('/createDetail', [NhapKhoController::class, 'createDetail']);
+        Route::post('/updateDetail', [NhapKhoController::class, 'updateDetail']);
+        Route::post('/deleteDetail', [NhapKhoController::class, 'deleteDetail']);
+        Route::post('/acceptNhapKho', [NhapKhoController::class, 'acceptNhapKho']);
     });
     Route::group(['prefix' => '/client'], function() {
         Route::get('/quan-ly-khach-hang', [ClientController::class, 'ViewKH']);
