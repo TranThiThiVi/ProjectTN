@@ -1,30 +1,64 @@
+<title>Bisum - eCommerce Bootstrap 5 Template</title>
+<!-- meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="meta description">
+<link rel="shortcut icon" href="/assets_client//img/favicon.png" type="image/x-icon">
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<!-- all css -->
+<style>
+    :root {
+        --primary-color: #00234D;
+        --secondary-color: #F76B6A;
 
-<title>Castro - HTML 5 Template Preview</title>
+        --btn-primary-border-radius: 0.25rem;
+        --btn-primary-color: #fff;
+        --btn-primary-background-color: #00234D;
+        --btn-primary-border-color: #00234D;
+        --btn-primary-hover-color: #fff;
+        --btn-primary-background-hover-color: #00234D;
+        --btn-primary-border-hover-color: #00234D;
+        --btn-primary-font-weight: 500;
 
-<!-- Fav Icon -->
-<link rel="icon" href="/assets_client/images/favicon.ico" type="image/x-icon">
+        --btn-secondary-border-radius: 0.25rem;
+        --btn-secondary-color: #00234D;
+        --btn-secondary-background-color: transparent;
+        --btn-secondary-border-color: #00234D;
+        --btn-secondary-hover-color: #fff;
+        --btn-secondary-background-hover-color: #00234D;
+        --btn-secondary-border-hover-color: #00234D;
+        --btn-secondary-font-weight: 500;
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        --heading-color: #000;
+        --heading-font-family: 'Poppins', sans-serif;
+        --heading-font-weight: 700;
 
-<!-- Stylesheets -->
-<link href="/assets_client/css/font-awesome-all.css" rel="stylesheet">
-<link href="/assets_client/css/flaticon.css" rel="stylesheet">
-<link href="/assets_client/css/owl.css" rel="stylesheet">
-<link href="/assets_client/css/bootstrap.css" rel="stylesheet">
-<link href="/assets_client/css/jquery.fancybox.min.css" rel="stylesheet">
-<link href="/assets_client/css/animate.css" rel="stylesheet">
-<link href="/assets_client/css/nice-select.css" rel="stylesheet">
-<link href="/assets_client/css/color.css" rel="stylesheet">
-<link href="/assets_client/css/style.css" rel="stylesheet">
-<link href="/assets_client/css/responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        --title-color: #000;
+        --title-font-family: 'Poppins', sans-serif;
+        --title-font-weight: 400;
+
+        --body-color: #000;
+        --body-background-color: #fff;
+        --body-font-family: 'Poppins', sans-serif;
+        --body-font-size: 14px;
+        --body-font-weight: 400;
+
+        --section-heading-color: #000;
+        --section-heading-font-family: 'Poppins', sans-serif;
+        --section-heading-font-size: 48px;
+        --section-heading-font-weight: 600;
+
+        --section-subheading-color: #000;
+        --section-subheading-font-family: 'Poppins', sans-serif;
+        --section-subheading-font-size: 16px;
+        --section-subheading-font-weight: 400;
+    }
+</style>
+
+<link rel="stylesheet" href="/assets_client//css/vendor.css">
+<link rel="stylesheet" href="/assets_client//css/style.css">

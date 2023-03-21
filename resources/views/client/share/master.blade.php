@@ -1,26 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
+
 <head>
-@include('client.share.css')
+ @include('client.share.css')
 </head>
+
 <body>
-    <div class="boxed_wrapper">
-        <!-- Preloader -->
-        {{-- <div class="loader-wrap">
-            <div class="preloader"><div class="preloader-close">Preloader Close</div></div>
-            <div class="layer layer-one"><span class="overlay"></span></div>
-            <div class="layer layer-two"><span class="overlay"></span></div>
-            <div class="layer layer-three"><span class="overlay"></span></div>
-        </div> --}}
+    <div class="body-wrapper">
+        <!-- announcement bar start -->
+        @include('client.share.header')
+        <!-- announcement bar end -->
+
+        <!-- header start -->
         @include('client.share.menu')
+        <!-- header end -->
+        @yield('noi_dung')
 
-        @yield('content')
 
-        <!-- main-footer -->
+        <!-- footer start -->
         @include('client.share.foot')
-        <!-- main-footer end -->
+
+        @include('client.share.js')
+        @yield('js')
     </div>
-    @include('client.share.js')
-    @yield('js')
 </body>
+
 </html>
