@@ -10,7 +10,7 @@ use App\Http\Controllers\TinTucController;
 use Illuminate\Support\Facades\Route;
 
 
-
+Route::get('/test', [TestController::class, 'test']);
 Route::get('/', [HomePageController::class, 'viewHomePage']);
 Route::get('/register', [HomePageController::class, 'viewRegister']);
 Route::post('/register', [ClientController::class, 'actionRegister']);
