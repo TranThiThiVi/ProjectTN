@@ -10,6 +10,41 @@ use Illuminate\Support\Facades\Auth;
 
 class NhapKhoController extends Controller
 {
+    public function viewQLHD()
+    {
+        return view('admin.page.quan_ly_hoa_don_nhap_kho.index');
+    }
+    public function dataHoaDon()
+    {
+        $dataHD = HoaDonNhapKho::join('admins', 'hoa_don_nhap_khos.id_admin','admins.id')
+                                ->select('hoa_don_nhap_khos.*','admins.ho_va_ten')
+                                ->where('hoa_don_nhap_khos.tinh_trang' , 1)
+                                ->get();
+
+        return response()->json([
+            'datahd'  => $dataHD,
+        ]);
+    }
+    public function dataChiTiet($id)
+    {
+        $dataChiTiet = HoaDonNhapKho::join('chi_tiet_hoa_dons', 'hoa_don_nhap_khos.id','chi_tiet_hoa_dons.id_hoa_don_nhap')
+                                     ->where('chi_tiet_hoa_dons.id_hoa_don_nhap' , $id)
+                                     ->select('chi_tiet_hoa_dons.*')
+                                     ->get();
+        return response()->json([
+            'dataChiTiet'  => $dataChiTiet,
+        ]);
+    }
+    public function deleteHD(Request $request)
+    {
+        HoaDonNhapKho::where('id', $request->id)->delete();
+
+        return response()->json([
+            'status'    => true,
+            'message'   => 'Đã hóa đơn thành công!',
+        ]);
+
+    }
     public function index()
     {
         return view('admin.page.nhap_kho.index');
