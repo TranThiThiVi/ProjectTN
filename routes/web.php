@@ -69,6 +69,10 @@ Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmidd
         Route::post('/updateDetail', [NhapKhoController::class, 'updateDetail']);
         Route::post('/deleteDetail', [NhapKhoController::class, 'deleteDetail']);
         Route::post('/acceptNhapKho', [NhapKhoController::class, 'acceptNhapKho']);
+        Route::get('/view-qlhd', [NhapKhoController::class, 'viewQLHD']);
+        Route::get('/data-hd', [NhapKhoController::class, 'dataHoaDon']);
+        Route::get('/data-chitiet/{id}', [NhapKhoController::class, 'dataChiTiet']);
+        Route::post('/delete-hd', [NhapKhoController::class, 'deleteHD']);
     });
     Route::group(['prefix' => '/client'], function() {
         Route::get('/quan-ly-khach-hang', [ClientController::class, 'ViewKH']);

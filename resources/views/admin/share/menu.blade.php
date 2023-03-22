@@ -21,6 +21,9 @@
              <li><a href="/admin/tin-tuc/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Tin Tức</span></a></li>
              <li><a href="/admin/tai-khoan/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Tài Khoản Admin</span></a></li>
              <li><a href="/admin/client/quan-ly-khach-hang" class="iq-waves-effect"><i class="ri-message-line"></i><span>Quản Lý Khách Hàng</span></a></li>
+             <li><a href="/admin/nhap-kho/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Nhập Kho Sản Phẩm</span></a></li>
+             <li><a href="/admin/nhap-kho/view-qlhd" class="iq-waves-effect"><i class="ri-message-line"></i><span>Quản Lý Hóa Đơn Nhập Kho</span></a></li>
+
 
              {{-- <li><a href="/admin/logout" class="iq-waves-effect"><i class="ri-login-box-line"></i><span>Đăng Xuất</span></a></li> --}}
              {{-- <li>
