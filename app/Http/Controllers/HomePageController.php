@@ -9,36 +9,36 @@ class HomePageController extends Controller
 {
     public function viewHomePage()
     {
-        $sanPham = SanPham::where('is_open', 1)->get();
-        return view('client.page.homepage', compact('sanPham'));
+        // $sanPham = SanPham::where('is_open', 1)->get();
+        return view('client.share.master');
     }
 
     public function viewRegister()
     {
-        return view('client.page.auth.register');
+        return view('client.page.register');
     }
 
     public function viewLogin()
     {
-        return view('client.page.auth.login');
+        return view('client.page.login');
     }
 
-    public function sanPhamDanhMuc($id)
-    {
-        $sanPham = SanPham::where('id_danh_muc', $id)->get();
+    // public function sanPhamDanhMuc($id)
+    // {
+    //     $sanPham = SanPham::where('id_danh_muc', $id)->get();
 
-        return view('client.page.sanphandanhmuc', compact('sanPham'));
+    //     return view('client.page.sanphandanhmuc', compact('sanPham'));
 
-    }
+    // }
 
-    public function chitietSanPham($id)
-    {
-        $sanPham = SanPham::find($id);
-        return view('client.page.chitietsanpham', compact('sanPham'));
-    }
+    // public function chitietSanPham($id)
+    // {
+    //     $sanPham = SanPham::find($id);
+    //     return view('client.page.chitietsanpham', compact('sanPham'));
+    // }
 
-    public function Cart()
-    {
-        return view('client.page.cart');
-    }
+    // public function Cart()
+    // {
+    //     return view('client.page.cart');
+    // }
 }

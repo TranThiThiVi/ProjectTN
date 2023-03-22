@@ -6,8 +6,5 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function test()
-    {
-        return view('client.share.master');
-    }
+
 }

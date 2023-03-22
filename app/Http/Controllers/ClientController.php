@@ -6,6 +6,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Yoeunes\Toastr\Facades\Toastr;
 
 use function GuzzleHttp\Promise\all;
 
@@ -13,18 +14,21 @@ class ClientController extends Controller
 {
     public function actionRegister(Request $request)
     {
+        // dd($request->all());
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
         Client::create($data);
 
         return response()->json([
             'status'    => true,
-            'message'   => 'Đã tạo tài khoản thành công',
+            Toastr()->success('Đã tạo tài khoản thành công!'),
+            // 'message'   => 'Đã tạo tài khoản thành công',
         ]);
     }
 
     public function actionLogin(Request $request)
     {
+        // dd($request->all());
         $data['email']      = $request->email;
         $data['password']   = $request->password;
 
@@ -32,6 +36,7 @@ class ClientController extends Controller
 
         return response()->json([
             'status'    => $check,
+            Toastr()->success('Đã đăng nhập thành công!'),
         ]);
     }
 
