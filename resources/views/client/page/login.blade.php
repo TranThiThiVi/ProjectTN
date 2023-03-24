@@ -57,7 +57,9 @@
                 axios
                     .post('/login', paramObj)
                     .then((res) => {
-                        if(res.data.status == 1) {
+                        console.log(res.data.status);
+                        if(res.data.status) {
+                            console.log(123);
                             toastr.success(res.data.message, "Thành công!");
                             window.location.href = "/";
                         }else{

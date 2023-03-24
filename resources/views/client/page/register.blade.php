@@ -74,7 +74,6 @@
 
         },
         created()   {
-
         },
         methods :   {
             add() {
@@ -91,9 +90,8 @@
                 axios
                     .post('/register', paramObj)
                     .then((res) => {
-                        if(res.data.status) {
-                            location.reload();
-                        }
+                        toastr.success('Đã tạo tài khoản thành công!');
+                        window.location.href = '/login';
                     })
                     .catch((res) => {
                         $.each(res.response.data.errors, function(k, v) {

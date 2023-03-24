@@ -21,8 +21,7 @@ class ClientController extends Controller
 
         return response()->json([
             'status'    => true,
-            Toastr()->success('Đã tạo tài khoản thành công!'),
-            // 'message'   => 'Đã tạo tài khoản thành công',
+            'message'   => 'Đã tạo tài khoản thành công',
         ]);
     }
 
@@ -34,11 +33,7 @@ class ClientController extends Controller
 
         $check = Auth::guard('client')->attempt($data);
         if($check) {
-
-            return response()->json([
-                'status'    => 1,
-                'message'   => 'Đã đăng nhập thành công!',
-            ]);
+            return response()->json(['status' => true]);
         } else {
             return response()->json([
                 'status'    => 0,
