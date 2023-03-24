@@ -33,11 +33,18 @@ class ClientController extends Controller
         $data['password']   = $request->password;
 
         $check = Auth::guard('client')->attempt($data);
+        if($check) {
 
-        return response()->json([
-            'status'    => $check,
-            Toastr()->success('Đã đăng nhập thành công!'),
-        ]);
+            return response()->json([
+                'status'    => 1,
+                'message'   => 'Đã đăng nhập thành công!',
+            ]);
+        } else {
+            return response()->json([
+                'status'    => 0,
+                'message'   => 'Tài khoản hoặc mật khẩu không đúng!',
+            ]);
+        }
     }
 
     public function logout()
