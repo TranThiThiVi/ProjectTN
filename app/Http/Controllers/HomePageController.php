@@ -10,7 +10,7 @@ class HomePageController extends Controller
     public function viewHomePage()
     {
         // $sanPham = SanPham::where('is_open', 1)->get();
-        return view('client.share.master');
+        return view('client.homepage');
     }
 
     public function viewRegister()
