@@ -99,33 +99,7 @@
                         });
                     });
             },
-            // login() {
-            //     var paramObj = {};
-            //     $.each($('#formdata').serializeArray(), function(_, kv) {
-            //         if (paramObj.hasOwnProperty(kv.name)) {
-            //             paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
-            //             paramObj[kv.name].push(kv.value);
-            //         } else {
-            //             paramObj[kv.name] = kv.value;
-            //         }
-            //     });
 
-            //     axios
-            //         .post('/login', paramObj)
-            //         .then((res) => {
-            //             if(res.data.status) {
-            //                 toastr.success(res.data.message, "Thành công!");
-            //                 this.thong_bao = res.data.message;
-            //             } else {
-            //                 toastr.error(res.data.message, "Error!");
-            //             }
-            //         })
-            //         .catch((res) => {
-            //             $.each(res.response.data.errors, function(k, v) {
-            //                 toastr.error(v[0]);
-            //             });
-            //         });
-            // }
         },
     });
 </script>
