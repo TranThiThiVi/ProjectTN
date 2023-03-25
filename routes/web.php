@@ -16,6 +16,7 @@ Route::get('/register', [HomePageController::class, 'viewRegister']);
 Route::post('/register', [ClientController::class, 'actionRegister']);
 Route::get('/login', [HomePageController::class, 'viewLogin']);
 Route::post('/login', [ClientController::class, 'actionLogin']);
+Route::get('/active/{hash}', [ClientController::class, 'activeClient']);
 
 
 Route::get('/admin/login', [AdminController::class, 'viewLogin']);

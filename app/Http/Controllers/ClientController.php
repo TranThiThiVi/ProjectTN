@@ -3,21 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Jobs\SendMailCreateClientJob;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yoeunes\Toastr\Facades\Toastr;
-
+use Illuminate\Support\Str;
 use function GuzzleHttp\Promise\all;
 
 class ClientController extends Controller
 {
     public function actionRegister(Request $request)
     {
-        // dd($request->all());
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
+        $data['hash'] = Str::uuid();
         Client::create($data);
+
+        SendMailCreateClientJob::dispatch($data);
 
         return response()->json([
             'status'    => true,
@@ -84,6 +87,23 @@ class ClientController extends Controller
             'message'   => 'Đã cập nhật khách hàng thành công!',
         ]);
 
+    }
+
+    public function activeClient($hash)
+    {
+        $client = Client::where('hash', $hash)->first();
+        if($client){
+            if($client->is_active == 1){
+                toastr()->warning('Tài khoản đã được kích hoạt trước đó!');
+                return redirect('/login');
+            }
+            $client->is_active = 1;
+            $client->save();
+
+            toastr()->success('Đã kích hoạt tài khoản thành công!');
+
+            return redirect('/login');
+        }
     }
 
 }
