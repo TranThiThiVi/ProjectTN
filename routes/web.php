@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CauHinhController;
+use App\Http\Controllers\ChiTietBanHangController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DanhMucController;
+use App\Http\Controllers\DonHangController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\NhapKhoController;
 use App\Http\Controllers\SanPhamController;
@@ -18,6 +21,7 @@ Route::get('/login', [HomePageController::class, 'viewLogin']);
 Route::post('/login', [ClientController::class, 'actionLogin']);
 Route::get('/active/{hash}', [ClientController::class, 'activeClient']);
 
+Route::get('/product/{id}', [SanPhamController::class, 'chiTiet']);
 
 Route::get('/admin/login', [AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [AdminController::class, 'actionLogin']);
@@ -27,6 +31,26 @@ Route::get('/client/logout', [ClientController::class, 'logout']);
 Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
 Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
 Route::get('/cart', [HomePageController::class, 'Cart']);
+
+
+
+Route::group(['middleware' => 'check'], function() {
+    Route::get('/client/logout', [ClientController::class, 'logout']);
+
+    Route::post('/add-to-cart', [ChiTietBanHangController::class, 'addToCart']);
+
+    Route::get('/list-cart', [ChiTietBanHangController::class, 'listCart']);
+    Route::get('/list-cart/data', [ChiTietBanHangController::class, 'listCartData']);
+
+    Route::post('/update-cart', [ChiTietBanHangController::class, 'updateCart']);
+    Route::post('/delete-cart', [ChiTietBanHangController::class, 'deleteCart']);
+
+    Route::get('/checkout', [DonHangController::class, 'checkout']);
+    Route::post('/process', [DonHangController::class, 'process']);
+
+
+});
+
 
 Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmiddleware'
     Route::group(['prefix' => '/danh-muc'], function() {
@@ -80,6 +104,21 @@ Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmidd
         Route::post('/delete', [ClientController::class, 'destroy']);
         Route::post('/update', [ClientController::class, 'update']);
 
+
+    });
+    Route::group(['prefix' => '/cau-hinh'], function() {
+        Route::get('/', [CauHinhController::class, 'index']);
+        Route::get('/data', [CauHinhController::class, 'getData']);
+        Route::post('/create', [CauHinhController::class, 'store']);
+        Route::get('/getChuyenMuc', [CauHinhController::class, 'getChuyenMuc']);
+        Route::get('/getSanPham', [CauHinhController::class, 'getSanPham']);
+    });
+
+    Route::group(['prefix' => '/don-hang'], function() {
+        Route::get('/', [DonHangController::class, 'viewDH']);
+        Route::get('/data', [DonHangController::class, 'getDataDonHang']);
+        Route::get('/chi-tiet/{id}', [DonHangController::class, 'chiTietDonHangAdmin']);
+        Route::post('/giao-hang', [DonHangController::class, 'changeGiaoHang']);
 
     });
 
