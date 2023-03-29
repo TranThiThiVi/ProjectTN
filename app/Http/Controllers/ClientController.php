@@ -30,12 +30,18 @@ class ClientController extends Controller
 
     public function actionLogin(Request $request)
     {
-        // dd($request->all());
         $data['email']      = $request->email;
         $data['password']   = $request->password;
 
         $check = Auth::guard('client')->attempt($data);
         if($check) {
+            if(Auth::guard('client')->user()->is_active == 0){
+                Auth::guard('client')->logout();
+                return response()->json([
+                    'status'    => 0,
+                    'message'   => 'Tài khoản chưa được kích hoạt!',
+                ]);
+            }
             return response()->json(['status' => true]);
         } else {
             return response()->json([

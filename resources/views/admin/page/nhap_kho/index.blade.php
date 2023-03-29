@@ -101,7 +101,7 @@
             axios
                 .get('/admin/nhap-kho/datasp')
                 .then((res) => {
-                    this.dsSanPham = res.data.datahd;
+                    this.dsSanPham = res.data.data;
                 });
         },
 

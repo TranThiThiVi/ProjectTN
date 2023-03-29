@@ -11,24 +11,22 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <td>Mã Hóa Đơn</td>
-                                <td>Tổng Tiền Hóa Đơn</td>
-                                <td>Ghi Chú</td>
-                                <td>Tên Người Nhập</td>
-                                <td>Tình Trạng</td>
-                                <td>Action</td>
+                                <th class="text-center align-middle">#</th>
+                                <td class="text-center align-middle">Mã Hóa Đơn</td>
+                                <td class="text-center align-middle">Tổng Tiền Hóa Đơn</td>
+                                <td class="text-center align-middle">Ghi Chú</td>
+                                <td class="text-center align-middle">Tên Người Nhập</td>
+                                <td class="text-center align-middle">Action</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(value , key) in dataHD ">
-                                <th>@{{ key + 1 }}</th>
-                                <td>@{{ value.ma_hoa_don}}</td>
-                                <td>@{{ value.tong_tien_hoa_don}}</td>
-                                <td>@{{ value.ghi_chu}}</td>
-                                <td>@{{ value.ho_va_ten}}</td>
-                                <td>@{{ value.tinh_trang}}</td>
-                                <td>
+                                <th class="align-middle text-center">@{{ key + 1 }}</th>
+                                <td class="align-middle">@{{ value.ma_hoa_don}}</td>
+                                <td class="align-middle">@{{ value.tong_tien_hoa_don}}</td>
+                                <td class="align-middle">@{{ value.ghi_chu}}</td>
+                                <td class="align-middle">@{{ value.ho_va_ten}}</td>
+                                <td class="align-middle text-center">
                                     <button class="btn btn-primary"data-toggle="modal" data-target="#exampleModal" v-on:click="chiTiet(value.id)" >Chi Tiết</button>
                                     <button v-on:click="delete_hd = value" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" >Xóa Bỏ</button>
                                 </td>
@@ -52,20 +50,20 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <td>Tên Sản Phẩm</td>
-                                    <td>Số Lượng Nhập</td>
-                                    <td>Đơn Giá Nhập</td>
-                                    <td>Thành Tiền</td>
+                                    <th class="text-center align-middle">#</th>
+                                    <td class="text-center align-middle">Tên Sản Phẩm</td>
+                                    <td class="text-center align-middle">Số Lượng Nhập</td>
+                                    <td class="text-center align-middle">Đơn Giá Nhập</td>
+                                    <td class="text-center align-middle">Thành Tiền</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="(v , k) in dataCT ">
-                                    <th>@{{ k + 1 }}</th>
-                                    <td>@{{ v.ten_san_pham }}</td>
-                                    <td>@{{ v.so_luong_nhap }}</td>
-                                    <td>@{{ v.don_gia_nhap }}</td>
-                                    <td>@{{ v.thanh_tien}}</td>
+                                    <th class="align-middle text-center">@{{ k + 1 }}</th>
+                                    <td class="align-middle">@{{ v.ten_san_pham }}</td>
+                                    <td class="align-middle">@{{ v.so_luong_nhap }}</td>
+                                    <td class="align-middle">@{{ v.don_gia_nhap }}</td>
+                                    <td class="align-middle">@{{ v.thanh_tien}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -140,9 +138,7 @@
                             toastr.error(v[0]);
                         });
                     });
-            },
-
-
+        },
     },
 });
 </script>

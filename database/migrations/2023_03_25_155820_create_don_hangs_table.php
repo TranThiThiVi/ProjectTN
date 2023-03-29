@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('phi_ship')->nullable();
             $table->integer('tien_hang')->nullable();
             $table->integer('tong_thanh_toan')->nullable();
-            $table->integer('thanh_toan')->default(1);
+            $table->integer('thanh_toan')->default(0);
             $table->integer('giao_hang')->default(0);
             $table->timestamps();
         });

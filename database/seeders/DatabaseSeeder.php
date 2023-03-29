@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         $this->call(DanhMucSeeder::class);
         $this->call(SanPhamSeeder::class);
-
-
+        $this->call(CauHinhSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

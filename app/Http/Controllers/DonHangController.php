@@ -35,7 +35,6 @@ class DonHangController extends Controller
             'phone'             => $request->phone,
             'dia_chi'           => $request->dia_chi,
             'id_khach_hang'     => $khachHang->id,
-            'thanh_toan'        => $request->thanh_toan,
         ]);
 
         $gioHang  = ChiTietBanHang::where('id_khach_hang', $khachHang->id)

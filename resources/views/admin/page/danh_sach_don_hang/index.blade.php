@@ -30,10 +30,8 @@
                                 <td class="align-middle">@{{ value.ho_va_ten }}</td>
                                 <td class="align-middle">@{{ value.dia_chi }}</td>
                                 <td class="text-center align-middle">
-                                    <button v-if="value.thanh_toan == -1" class="btn btn-danger">Chưa Thanh Toán</button>
-                                    <button v-else-if="value.thanh_toan == 0" class="btn btn-success">Thanh Toán
-                                        Online</button>
-                                    <button v-else class="btn btn-info">Thanh Toán Tiền Mặt</button>
+                                    <button v-if="value.thanh_toan == 0" class="btn btn-danger">Chưa Thanh Toán</button>
+                                    <button v-else-if="value.thanh_toan == 1" class="btn btn-success">Đã Thanh Toán</button>
                                 </td>
                                 <td class="text-center align-middle">
                                     <button v-if="value.giao_hang == 0" v-on:click="giao_hang = value"
