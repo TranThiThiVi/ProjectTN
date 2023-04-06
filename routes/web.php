@@ -31,6 +31,8 @@ Route::get('/client/logout', [ClientController::class, 'logout']);
 Route::get('/client/danh-muc/{id}', [HomePageController::class, 'sanPhamDanhMuc']);
 Route::get('/san-pham/chi-tiet/{id}', [HomePageController::class, 'chitietSanPham']);
 Route::get('/cart', [HomePageController::class, 'Cart']);
+Route::get('/tin-tuc', [HomePageController::class, 'tinTuc']);
+Route::get('/chitiet-tintuc/{id}', [HomePageController::class, 'chiTiettinTuc']);
 
 
 

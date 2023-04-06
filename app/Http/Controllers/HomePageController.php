@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SanPham;
+use App\Models\TinTuc;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -21,6 +22,20 @@ class HomePageController extends Controller
     public function viewLogin()
     {
         return view('client.page.login');
+    }
+
+    public function tinTuc()
+    {
+        $tinTuc = TinTuc::get();
+        return view('client.tintuc', compact('tinTuc'));
+    }
+
+    public function chiTiettinTuc($id)
+    {
+        $tinTuc = TinTuc::find($id);
+        $tinTuc2 = TinTuc::orderBy('created_at')
+                            ->get();
+        return view('client.chitiettintuc', compact('tinTuc', 'tinTuc2'));
     }
 
     // public function sanPhamDanhMuc($id)

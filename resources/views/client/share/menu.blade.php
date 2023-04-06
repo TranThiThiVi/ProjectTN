@@ -94,7 +94,9 @@
                                     </div>
                                 </div>
                             </li>
-
+                            <li class="menu-list-item nav-item">
+                                <a class="nav-link" href="/tin-tuc">Tin Tức</a>
+                            </li>
                             <li class="menu-list-item nav-item">
                                 <a class="nav-link" href="contact.html">Contact</a>
                             </li>
