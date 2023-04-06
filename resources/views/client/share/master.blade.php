@@ -175,7 +175,11 @@
                             toastr.error(v[0]);
                         });
                     });
-            }
+            },
+
+            cmt(){
+                console.log(1);
+            },
         },
     });
     </script>

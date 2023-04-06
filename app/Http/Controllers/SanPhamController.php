@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SanPham\CreateSanPhamRequest;
 use App\Http\Requests\SanPham\DeleteSanPhamRequest;
 use App\Http\Requests\SanPham\UpdateSanPhamRequest;
+use App\Models\BinhLuan;
 use App\Models\SanPham;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SanPhamController extends Controller
 {
     public function chiTiet($string)
     {
+        $KhachHang = Auth::guard('client')->user();
+
         if (preg_match('/post(\d+)/', $string, $matches)) {
             $id = $matches[1];
             $value = SanPham::where('san_phams.id', $id)
@@ -23,8 +27,11 @@ class SanPhamController extends Controller
                 $cate = SanPham::where('id_danh_muc', '<>', $value->id_danh_muc)
                             ->orwhere('gia_ban', '<=', $value->gia_ban)
                             ->take(6)->get();
-
-                return view('client.chi_tiet_san_pham', compact('value', 'cate'));
+                $binhLuan = BinhLuan::where('id_san_pham', $value->id)
+                                    ->join('clients', 'binh_luans.id_khach_hang', 'clients.id')
+                                    ->select('clients.ho_va_ten', 'binh_luans.*')
+                                    ->get();
+                return view('client.chi_tiet_san_pham', compact('value', 'cate', 'binhLuan'));
             } else {
                 toastr()->error('Sản phẩm không tồn tại!');
                 return redirect('/');

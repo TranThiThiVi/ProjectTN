@@ -4,7 +4,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-4">
                     <div class="header-logo">
-                        <a href="index.html" class="logo-main">
+                        <a href="/" class="logo-main">
                             <img src="/assets_client//img/logo.png" loading="lazy" alt="bisum">
                         </a>
                     </div>
@@ -17,7 +17,7 @@
                         <ul class="main-menu list-unstyled justify-content-center">
                             <li class="menu-list-item nav-item has-dropdown active">
                                 <div class="mega-menu-header">
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="/">
                                         Home
                                     </a>
                                     {{-- <span class="open-submenu">
@@ -112,7 +112,7 @@
                             </svg>
                         </a>
                         <a class="header-action-item header-wishlist ms-4 d-none d-lg-block"
-                            href="wishlist.html">
+                            href="/viewYeuthich">
                             <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path

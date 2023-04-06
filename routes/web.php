@@ -35,6 +35,10 @@ Route::get('/cart', [HomePageController::class, 'Cart']);
 
 
 Route::group(['middleware' => 'check'], function() {
+    Route::get('/client/yeu-thich/{id}', [ClientController::class, 'yeuThich']);
+    Route::get('/client/huy-yeu-thich/{id}', [ClientController::class, 'huyYeuThich']);
+    Route::get('/viewYeuthich', [ClientController::class, 'viewYeuthich']);
+    Route::post('/client/comment', [ClientController::class, 'comment']);
     Route::get('/client/logout', [ClientController::class, 'logout']);
 
     Route::post('/add-to-cart', [ChiTietBanHangController::class, 'addToCart']);

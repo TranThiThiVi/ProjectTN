@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\Jobs\SendMailCreateClientJob;
+use App\Models\BinhLuan;
 use App\Models\Client;
+use App\Models\YeuThich;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yoeunes\Toastr\Facades\Toastr;
@@ -112,4 +114,70 @@ class ClientController extends Controller
         }
     }
 
+    public function yeuThich($id)
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $yeuThich = YeuThich::where('id_san_pham', $id)
+                            ->where('id_khach_hang', $KhachHang->id)
+                            ->first();
+        if($yeuThich){
+            toastr()->error('Đã thêm vào yêu thích trước đó!');
+            return redirect()->back();
+        }else{
+            YeuThich::create([
+                'id_san_pham'       => $id,
+                'id_khach_hang'     => $KhachHang->id,
+                'is_yeu_thich'      => 0,
+            ]);
+
+            toastr()->success('Đã thêm vào yêu thích!');
+
+            return redirect()->back();
+        }
+
+
+    }
+
+    public function comment(Request $request)
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $data = $request->all();
+
+        BinhLuan::create([
+            'id_san_pham'   =>   $request->id_san_pham,
+            'id_khach_hang' =>   $KhachHang->id,
+            'noi_dung'      =>   $request->noi_dung,
+        ]);
+
+        return response()->json([
+            'status' => 1,
+            'message' => 'Đã bình luận bài viết!',
+        ]);
+    }
+
+    public function viewYeuthich()
+    {
+        $KhachHang = Auth::guard('client')->user();
+        $yeuThich = YeuThich::where('id_khach_hang', $KhachHang->id)
+                            ->join('san_phams', 'yeu_thiches.id_san_pham', 'san_phams.id')
+                            ->select('san_phams.*', 'yeu_thiches.id as id_yeu_thich')
+                            ->get();
+        return view('client.yeuthich', compact('yeuThich'));
+    }
+
+    public function huyYeuThich($id)
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $yeuThich = YeuThich::where('id_san_pham', $id)
+                            ->where('id_khach_hang', $KhachHang->id)
+                            ->first();
+        if($yeuThich){
+            $yeuThich->delete();
+            toastr()->error('Đã hủy yêu thích!');
+            return redirect()->back();
+        }
+    }
 }
