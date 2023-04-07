@@ -17,12 +17,13 @@
        <nav class="iq-sidebar-menu">
           <ul id="iq-sidebar-toggle" class="iq-menu">
              <li><a href="/admin/danh-muc/index" class="iq-waves-effect"><i class="ri-calendar-2-line"></i><span>Danh Mục</span></a></li>
-             <li><a href="/admin/san-pham/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Sản Phẩm</span></a></li>
-             <li><a href="/admin/tin-tuc/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Tin Tức</span></a></li>
-             <li><a href="/admin/tai-khoan/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Tài Khoản Admin</span></a></li>
-             <li><a href="/admin/client/quan-ly-khach-hang" class="iq-waves-effect"><i class="ri-message-line"></i><span>Quản Lý Khách Hàng</span></a></li>
-             <li><a href="/admin/nhap-kho/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Nhập Kho Sản Phẩm</span></a></li>
-             <li><a href="/admin/nhap-kho/view-qlhd" class="iq-waves-effect"><i class="ri-message-line"></i><span>Quản Lý Hóa Đơn Nhập Kho</span></a></li>
+             <li><a href="/admin/san-pham/index" class="iq-waves-effect"><i class="fa-brands fa-product-hunt"></i><span>Sản Phẩm</span></a></li>
+             <li><a href="/admin/tin-tuc/index" class="iq-waves-effect"><i class="fa-regular fa-newspaper"></i><span>Tin Tức</span></a></li>
+             <li><a href="/admin/tai-khoan/index" class="iq-waves-effect"><i class="fa-solid fa-user"></i><span>Tài Khoản Admin</span></a></li>
+             <li><a href="/admin/client/quan-ly-khach-hang" class="iq-waves-effect"><i class="fa-solid fa-users"></i><span>Quản Lý Khách Hàng</span></a></li>
+             <li><a href="/admin/don-hang" class="iq-waves-effect"><i class="fa-solid fa-store"></i><span>Quản Lý Đơn Hàng</span></a></li>
+             <li><a href="/admin/nhap-kho/index" class="iq-waves-effect"><i class="fa-solid fa-warehouse"></i><span>Nhập Kho Sản Phẩm</span></a></li>
+             <li><a href="/admin/nhap-kho/view-qlhd" class="iq-waves-effect"><i class="fa-solid fa-warehouse"></i><span>Quản Lý Hóa Đơn Nhập Kho</span></a></li>
 
 
              {{-- <li><a href="/admin/logout" class="iq-waves-effect"><i class="ri-login-box-line"></i><span>Đăng Xuất</span></a></li> --}}

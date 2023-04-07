@@ -1,117 +1,119 @@
 @extends('admin.master')
 @section('content')
     <div id="app" class="row">
-        <div class="card">
-            <div class="card-header">
-                Chi Tiết Đơn Hàng
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="text-center">
-                            <th class="align-middle text-center">#</th>
-                            <th class="align-middle text-center">Mã Đơn Hàng</th>
-                            <th class="align-middle text-center">Tiền hàng</th>
-                            <th class="align-middle text-center">Phí Ship</th>
-                            <th class="align-middle text-center">Tên Khách Hàng</th>
-                            <th class="align-middle text-center">Địa Chỉ</th>
-                            <th class="align-middle text-center">Thanh Toán</th>
-                            <th class="align-middle text-center">Giao Hàng</th>
-                            <th class="align-middle text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <template v-for="(value, index) in list">
-                            <tr>
-                                <th class="text-center align-middle">@{{ index + 1 }}</th>
-                                <td class="text-center align-middle">@{{ value.hash_don_hang }}</td>
-                                <td class="align-middle">@{{ numberformat(value.tien_hang) }}</td>
-                                <td class="align-middle">@{{ numberformat(value.phi_ship) }}</td>
-                                <td class="align-middle">@{{ value.ho_va_ten }}</td>
-                                <td class="align-middle">@{{ value.dia_chi }}</td>
-                                <td class="text-center align-middle">
-                                    <button v-if="value.thanh_toan == 0" class="btn btn-danger">Chưa Thanh Toán</button>
-                                    <button v-else-if="value.thanh_toan == 1" class="btn btn-success">Đã Thanh Toán</button>
-                                </td>
-                                <td class="text-center align-middle">
-                                    <button v-if="value.giao_hang == 0" v-on:click="giao_hang = value"
-                                        class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Chưa
-                                        Giao</button>
-                                    <button v-else-if="value.giao_hang == 1" v-on:click="giao_hang = value"
-                                        class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Đang vận
-                                        chuyển</button>
-                                    <button v-else v-on:click="giao_hang = value" class="btn btn-success"
-                                        data-toggle="modal" data-target="#exampleModal">Đã giao</button>
-                                    <button v-else class="btn btn-success">Đang Vận Chuyển</button>
-                                    <button v-else class="btn btn-info">Đã Nhận</button>
-                                </td>
-                                <td class="text-center align-middle">
-                                    <button class="btn btn-info text-white" data-toggle="modal"
-                                        data-target="#chiTietDonhang" v-on:click="chiTietDonHang(value.id)">Chi
-                                        Tiết</button>
-                                </td>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    Chi Tiết Đơn Hàng
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="align-middle text-center">#</th>
+                                <th class="align-middle text-center">Mã Đơn Hàng</th>
+                                <th class="align-middle text-center">Tên Khách Hàng</th>
+                                <th class="align-middle text-center">Địa Chỉ</th>
+                                <th class="align-middle text-center">Tiền hàng</th>
+                                <th class="align-middle text-center">Phí Ship</th>
+                                <th class="align-middle text-center">Thanh Toán</th>
+                                <th class="align-middle text-center">Giao Hàng</th>
+                                <th class="align-middle text-center">Action</th>
                             </tr>
-                        </template>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <template v-for="(value, index) in list">
+                                <tr>
+                                    <th class="text-center align-middle">@{{ index + 1 }}</th>
+                                    <td class="text-center align-middle">@{{ value.hash_don_hang }}</td>
+                                    <td class="align-middle">@{{ value.ho_va_ten }}</td>
+                                    <td class="align-middle">@{{ value.dia_chi }}</td>
+                                    <td class="align-middle">@{{ numberformat(value.tien_hang) }}</td>
+                                    <td class="align-middle">@{{ numberformat(value.phi_ship) }}</td>
+                                    <td class="text-center align-middle">
+                                        <button v-if="value.thanh_toan == 0" class="btn btn-danger">Chưa Thanh Toán</button>
+                                        <button v-else-if="value.thanh_toan == 1" class="btn btn-success">Đã Thanh Toán</button>
+                                    </td>
+                                    <td class="text-center align-middle">
+                                        <button v-if="value.giao_hang == 0" v-on:click="giao_hang = value"
+                                            class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Chưa
+                                            Giao</button>
+                                        <button v-else-if="value.giao_hang == 1" v-on:click="giao_hang = value"
+                                            class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Đang vận
+                                            chuyển</button>
+                                        <button v-else v-on:click="giao_hang = value" class="btn btn-success"
+                                            data-toggle="modal" data-target="#exampleModal">Đã giao</button>
+                                        <button v-else class="btn btn-success">Đang Vận Chuyển</button>
+                                        <button v-else class="btn btn-info">Đã Nhận</button>
+                                    </td>
+                                    <td class="text-center align-middle">
+                                        <button class="btn btn-info text-white" data-toggle="modal"
+                                            data-target="#chiTietDonhang" v-on:click="chiTietDonHang(value.id)">Chi
+                                            Tiết</button>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Giao Hàng</h5>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="">Chọn trạng thái giao hàng</label>
-                        <select class="form-control" v-model="giao_hang.giao_hang">
-                            <option value="0">Chưa giao</option>
-                            <option value="1">Đang vận chuyển</option>
-                            <option value="2">Đã giao hàng</option>
-                        </select>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary" v-on:click="giaoHang()">Lưu</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Giao Hàng</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">Chọn trạng thái giao hàng</label>
+                            <select class="form-control" v-model="giao_hang.giao_hang">
+                                <option value="0">Chưa giao</option>
+                                <option value="1">Đang vận chuyển</option>
+                                <option value="2">Đã giao hàng</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary" v-on:click="giaoHang()">Lưu</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="chiTietDonhang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg ">
-                <div class="modal-content ">
-                    <div class="modal-header">
-                        <h3 class="text-dark">Danh Sách Sản Phẩm</h3>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="align-middle text-center">#</th>
-                                    <th class="align-middle text-center">Hình Ảnh</th>
-                                    <th class="align-middle text-center">Tên Sản Phẩm</th>
-                                    <th class="align-middle text-center">Đơn Giá</th>
-                                    <th class="align-middle text-center">Thành Tiền</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(value, key) in list_san_pham">
-                                    <th class="text-center align-middle">@{{ key + 1 }}</th>
-                                    <td class="align-middle">
-                                        <img style="height: 100PX; width: 100px ;"
-                                            v-bind:src="value?.hinh_anh.split(',')[0]" alt="img">
-                                    </td>
-                                    <td class="align-middle">
-                                        <h6><a class="text-dark"target="_blank"
-                                                v-bind:href="'/product/' + value.slug_san_pham + 'post' + value.id_san_pham">@{{ value.ten_san_pham }}</a>
-                                        </h6>
-                                    </td>
-                                    <td class="align-middle">@{{ numberformat(tinhGia(value.gia_ban, value.gia_khuyen_mai)) }} x @{{ value.so_luong }}</td>
-                                    <td class="align-middle">@{{ numberformat(tinhGia(value.gia_ban, value.gia_khuyen_mai) * value.so_luong) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="modal fade" id="chiTietDonhang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg ">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h3 class="text-dark">Danh Sách Sản Phẩm</h3>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="align-middle text-center">#</th>
+                                        <th class="align-middle text-center">Hình Ảnh</th>
+                                        <th class="align-middle text-center">Tên Sản Phẩm</th>
+                                        <th class="align-middle text-center">Đơn Giá</th>
+                                        <th class="align-middle text-center">Thành Tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(value, key) in list_san_pham">
+                                        <th class="text-center align-middle">@{{ key + 1 }}</th>
+                                        <td class="align-middle">
+                                            <img style="height: 100PX; width: 100px ;"
+                                                v-bind:src="value?.hinh_anh.split(',')[0]" alt="img">
+                                        </td>
+                                        <td class="align-middle">
+                                            <h6><a class="text-dark"target="_blank"
+                                                    v-bind:href="'/product/' + value.slug_san_pham + 'post' + value.id_san_pham">@{{ value.ten_san_pham }}</a>
+                                            </h6>
+                                        </td>
+                                        <td class="align-middle">@{{ numberformat(tinhGia(value.gia_ban, value.gia_khuyen_mai)) }} x @{{ value.so_luong }}</td>
+                                        <td class="align-middle">@{{ numberformat(tinhGia(value.gia_ban, value.gia_khuyen_mai) * value.so_luong) }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

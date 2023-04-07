@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DanhMuc;
 use App\Models\SanPham;
 use App\Models\TinTuc;
 use Illuminate\Http\Request;
@@ -38,6 +39,22 @@ class HomePageController extends Controller
         return view('client.chitiettintuc', compact('tinTuc', 'tinTuc2'));
     }
 
+    public function viewListProduct($id)
+    {
+        $danhMuc = DanhMuc::where('id', $id)->first();
+        if($danhMuc->id_danh_muc_cha == 0) {
+            $list_id_danh_muc = DanhMuc::where('id_danh_muc_cha', $id)
+                                        ->select('id')
+                                        ->get();
+        } else {
+            $list_id_danh_muc = DanhMuc::where('id', $id)
+                                        ->select('id')
+                                        ->get();
+        }
+
+        $data = SanPham::whereIn('id_danh_muc', $list_id_danh_muc)->get();
+        return view('client.list_product', compact('data', 'danhMuc'));
+    }
     // public function sanPhamDanhMuc($id)
     // {
     //     $sanPham = SanPham::where('id_danh_muc', $id)->get();
