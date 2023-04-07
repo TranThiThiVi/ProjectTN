@@ -3,83 +3,82 @@
 namespace App\Http\Controllers;
 
 use App\Models\BinhLuan;
+use App\Models\DanhMuc;
+use App\Models\SanPham;
 use Illuminate\Http\Request;
 
 class BinhLuanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return view('admin.page.binh_luan.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function getData()
     {
-        //
+        $binhLuan = BinhLuan::join('clients', 'clients.id', 'binh_luans.id_khach_hang')
+                            ->select('binh_luans.*', 'clients.ho_va_ten')
+                            ->get();
+
+        return response()->json([
+            'data' => $binhLuan
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getDataDM()
     {
-        //
+        $data = DanhMuc::where('id_danh_muc_cha', '>', 0)
+                        ->get();
+
+        return response()->json([
+            'data' => $data
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\BinhLuan  $binhLuan
-     * @return \Illuminate\Http\Response
-     */
-    public function show(BinhLuan $binhLuan)
+    public function getDataSP($id)
     {
-        //
+        if($id == 0){
+            $data = SanPham::where('id_danh_muc', $id)->get();
+            $binhLuan = BinhLuan::join('clients', 'clients.id', 'binh_luans.id_khach_hang')
+                            ->select('binh_luans.*', 'clients.ho_va_ten')
+                            ->get();
+
+            return response()->json([
+                'data' => $data,
+                'dataBL' => $binhLuan
+            ]);
+        }else{
+            $data = SanPham::where('id_danh_muc', $id)->get();
+
+            return response()->json([
+                'data' => $data
+            ]);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BinhLuan  $binhLuan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BinhLuan $binhLuan)
+    public function getDataTheoSP($id)
     {
-        //
+        $binhLuan = BinhLuan::join('clients', 'clients.id', 'binh_luans.id_khach_hang')
+                            ->where('id_san_pham', $id)
+                            ->select('binh_luans.*', 'clients.ho_va_ten')
+                            ->get();
+
+        return response()->json([
+            'data' => $binhLuan
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BinhLuan  $binhLuan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, BinhLuan $binhLuan)
+    public function deleteBL(Request $request)
     {
-        //
-    }
+        $binhLuan = BinhLuan::find($request->id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\BinhLuan  $binhLuan
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(BinhLuan $binhLuan)
-    {
-        //
+        if($binhLuan){
+            $binhLuan->delete();
+            return response()->json([
+                'status' => 1,
+                'message'=> 'Đã xóa bình luận!'
+            ]);
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BinhLuanController;
 use App\Http\Controllers\CauHinhController;
 use App\Http\Controllers\ChiTietBanHangController;
 use App\Http\Controllers\ClientController;
@@ -128,6 +129,15 @@ Route::group(['prefix' => '/admin', 'middleware' => 'adminmiddleware'], function
         Route::get('/chi-tiet/{id}', [DonHangController::class, 'chiTietDonHangAdmin']);
         Route::post('/giao-hang', [DonHangController::class, 'changeGiaoHang']);
 
+    });
+
+    Route::group(['prefix' => '/binh-luan'], function() {
+        Route::get('/', [BinhLuanController::class, 'index']);
+        Route::get('/data', [BinhLuanController::class, 'getData']);
+        Route::get('/data-theo-sp/{id}', [BinhLuanController::class, 'getDataTheoSP']);
+        Route::get('/data-dm', [BinhLuanController::class, 'getDataDM']);
+        Route::get('/datasp/{id}', [BinhLuanController::class, 'getDataSP']);
+        Route::post('/delete', [BinhLuanController::class, 'deleteBL']);
     });
 
 });
