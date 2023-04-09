@@ -11,6 +11,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\NhapKhoController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ThongKeController;
 use App\Http\Controllers\TinTucController;
 use Illuminate\Support\Facades\Route;
 
@@ -138,6 +139,11 @@ Route::group(['prefix' => '/admin', 'middleware' => 'adminmiddleware'], function
         Route::get('/data-dm', [BinhLuanController::class, 'getDataDM']);
         Route::get('/datasp/{id}', [BinhLuanController::class, 'getDataSP']);
         Route::post('/delete', [BinhLuanController::class, 'deleteBL']);
+    });
+
+    Route::group(['prefix' => '/thong-ke'], function() {
+        Route::get('/', [ThongKeController::class, 'index']);
+        Route::post('/', [ThongKeController::class, 'getDataTheoSoLuong']);
     });
 
 });

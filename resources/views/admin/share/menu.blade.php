@@ -25,6 +25,7 @@
              <li><a href="/admin/nhap-kho/index" class="iq-waves-effect"><i class="fa-solid fa-warehouse"></i><span>Nhập Kho Sản Phẩm</span></a></li>
              <li><a href="/admin/nhap-kho/view-qlhd" class="iq-waves-effect"><i class="fa-solid fa-warehouse"></i><span>Quản Lý Hóa Đơn Nhập Kho</span></a></li>
              <li><a href="/admin/binh-luan/" class="iq-waves-effect"><i class="fa-solid fa-warehouse"></i><span>Quản Lý Bình Luận</span></a></li>
+             <li><a href="/admin/thong-ke/" class="iq-waves-effect"><i class="fa-solid fa-warehouse"></i><span>Thống Kê Bán Hàng</span></a></li>
 
 
              {{-- <li><a href="/admin/logout" class="iq-waves-effect"><i class="ri-login-box-line"></i><span>Đăng Xuất</span></a></li> --}}
