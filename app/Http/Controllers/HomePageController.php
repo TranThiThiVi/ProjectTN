@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Contact\ContactRequest;
+use App\Jobs\ContactJob;
 use App\Models\DanhMuc;
 use App\Models\SanPham;
 use App\Models\TinTuc;
@@ -60,22 +62,21 @@ class HomePageController extends Controller
     {
         return view('client.contact');
     }
-    // public function sanPhamDanhMuc($id)
-    // {
-    //     $sanPham = SanPham::where('id_danh_muc', $id)->get();
+    public function actionContact(ContactRequest $request)
+    {
+        $data = $request->all();
+        $data['ho_va_ten']          = $request->ho_va_ten;
+        $data['email']              = $request->email;
+        $data['tieu_de']            = $request->tieu_de;
+        $data['so_dien_thoai']      = $request->so_dien_thoai;
+        $data['noi_dung']           = $request->noi_dung;
 
-    //     return view('client.page.sanphandanhmuc', compact('sanPham'));
+        ContactJob::dispatch($data);
 
-    // }
+        return response()->json([
+            'status'    => 1,
+            'message'   => 'Đã gửi cho nhà bán hàng!',
+        ]);
+    }
 
-    // public function chitietSanPham($id)
-    // {
-    //     $sanPham = SanPham::find($id);
-    //     return view('client.page.chitietsanpham', compact('sanPham'));
-    // }
-
-    // public function Cart()
-    // {
-    //     return view('client.page.cart');
-    // }
 }
