@@ -38,6 +38,7 @@ Route::get('/chitiet-tintuc/{id}', [HomePageController::class, 'chiTiettinTuc'])
 
 Route::get('/list-product/{id}', [HomePageController::class, 'viewListProduct']);
 Route::get('/contact', [HomePageController::class, 'viewContact']);
+Route::post('/add-contact', [HomePageController::class, 'actionContact']);
 
 
 

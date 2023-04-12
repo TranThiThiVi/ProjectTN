@@ -1,6 +1,6 @@
 @extends('client.share.master')
 @section('noi_dung')
-<main id="MainContent" class="content-for-layout">
+<main id="app" class="content-for-layout">
     <div class="contact-page">
 
         <!-- contact box start -->
@@ -65,31 +65,31 @@
                         <h2 class="section-heading">Thông Tin Liên Hệ</h2>
                     </div>
                     <div class="contact-form--wrapper">
-                        <form action="" class="contact-form">
+                        <form  v-on:submit.prevent="add()" id="formdata" class="contact-form">
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <fieldset>
-                                        <input type="text" placeholder="Họ và tên">
+                                        <input name="ho_va_ten" type="text" placeholder="Họ và tên">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <fieldset>
-                                        <input type="email" placeholder="Nhập vào email">
+                                        <input name="email" type="email" placeholder="Nhập vào email">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <fieldset>
-                                        <input type="text" placeholder="Tiêu đề">
+                                        <input name="tieu_de" type="text" placeholder="Tiêu đề">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <fieldset>
-                                        <input type="text" placeholder="Số điện thoại">
+                                        <input name="so_dien_thoai" type="text" placeholder="Số điện thoại">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-12 col-12">
                                     <fieldset>
-                                        <textarea cols="20" rows="6" placeholder="Nội dung liên hệ"></textarea>
+                                        <textarea name="noi_dung" cols="20" rows="6" placeholder="Nội dung liên hệ"></textarea>
                                     </fieldset>
                                     <button type="submit" class="position-relative review-submit-btn contact-submit-btn">Gửi liên hệ</button>
                                 </div>
@@ -104,5 +104,45 @@
 </main>
 @endsection
 @section('js')
+<script>
+    new Vue({
+        el      :   '#app',
+        data    :   {
 
+        },
+        created()   {
+
+        },
+        methods :   {
+            add() {
+                var paramObj = {};
+                $.each($('#formdata').serializeArray(), function(_, kv) {
+                    if (paramObj.hasOwnProperty(kv.name)) {
+                        paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
+                        paramObj[kv.name].push(kv.value);
+                    } else {
+                        paramObj[kv.name] = kv.value;
+                    }
+                });
+
+                axios
+                    .post('/add-contact', paramObj)
+                    .then((res) => {
+                        if(res.data.status) {
+                            toastr.success(res.data.message);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 2000);
+                        }
+                    })
+                    .catch((res) => {
+                        $.each(res.response.data.errors, function(k, v) {
+                            toastr.error(v[0]);
+                        });
+                    });
+            },
+
+        },
+    });
+</script>
 @endsection

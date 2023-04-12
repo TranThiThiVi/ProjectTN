@@ -1,6 +1,7 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"
+    style="width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
 
 <head>
     <meta charset="UTF-8">
@@ -26,6 +27,19 @@
     <style type="text/css">
         #outlook a {
             padding: 0;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
         }
 
         .es-button {
@@ -67,7 +81,7 @@
             h1 a,
             h2 a,
             h3 a {
-                line-height: 120%
+                line-height: 120% !important
             }
 
             h1 {
@@ -103,29 +117,25 @@
                 font-size: 20px !important
             }
 
-            .es-menu td a {
-                font-size: 12px !important
-            }
-
             .es-header-body p,
             .es-header-body ul li,
             .es-header-body ol li,
             .es-header-body a {
-                font-size: 14px !important
+                font-size: 16px !important
             }
 
             .es-content-body p,
             .es-content-body ul li,
             .es-content-body ol li,
             .es-content-body a {
-                font-size: 14px !important
+                font-size: 16px !important
             }
 
             .es-footer-body p,
             .es-footer-body ul li,
             .es-footer-body ol li,
             .es-footer-body a {
-                font-size: 14px !important
+                font-size: 16px !important
             }
 
             .es-infoblock p,
@@ -178,7 +188,14 @@
                 border-right-width: 0px !important
             }
 
+            .es-btn-fw {
+                border-width: 10px 0px !important;
+                text-align: center !important
+            }
+
             .es-adaptive table,
+            .es-btn-fw,
+            .es-btn-fw-brdr,
             .es-left,
             .es-right {
                 width: 100% !important
@@ -205,19 +222,19 @@
             }
 
             .es-m-p0 {
-                padding: 0 !important
+                padding: 0px !important
             }
 
             .es-m-p0r {
-                padding-right: 0 !important
+                padding-right: 0px !important
             }
 
             .es-m-p0l {
-                padding-left: 0 !important
+                padding-left: 0px !important
             }
 
             .es-m-p0t {
-                padding-top: 0 !important
+                padding-top: 0px !important
             }
 
             .es-m-p0b {
@@ -272,160 +289,8 @@
                 display: inline-block !important
             }
 
-            .es-m-p5 {
-                padding: 5px !important
-            }
-
-            .es-m-p5t {
-                padding-top: 5px !important
-            }
-
-            .es-m-p5b {
-                padding-bottom: 5px !important
-            }
-
-            .es-m-p5r {
-                padding-right: 5px !important
-            }
-
-            .es-m-p5l {
-                padding-left: 5px !important
-            }
-
-            .es-m-p10 {
-                padding: 10px !important
-            }
-
-            .es-m-p10t {
-                padding-top: 10px !important
-            }
-
-            .es-m-p10b {
-                padding-bottom: 10px !important
-            }
-
-            .es-m-p10r {
-                padding-right: 10px !important
-            }
-
-            .es-m-p10l {
-                padding-left: 10px !important
-            }
-
-            .es-m-p15 {
-                padding: 15px !important
-            }
-
-            .es-m-p15t {
-                padding-top: 15px !important
-            }
-
-            .es-m-p15b {
-                padding-bottom: 15px !important
-            }
-
-            .es-m-p15r {
-                padding-right: 15px !important
-            }
-
-            .es-m-p15l {
-                padding-left: 15px !important
-            }
-
-            .es-m-p20 {
-                padding: 20px !important
-            }
-
-            .es-m-p20t {
-                padding-top: 20px !important
-            }
-
-            .es-m-p20r {
-                padding-right: 20px !important
-            }
-
-            .es-m-p20l {
-                padding-left: 20px !important
-            }
-
-            .es-m-p25 {
-                padding: 25px !important
-            }
-
-            .es-m-p25t {
-                padding-top: 25px !important
-            }
-
-            .es-m-p25b {
-                padding-bottom: 25px !important
-            }
-
-            .es-m-p25r {
-                padding-right: 25px !important
-            }
-
-            .es-m-p25l {
-                padding-left: 25px !important
-            }
-
-            .es-m-p30 {
-                padding: 30px !important
-            }
-
-            .es-m-p30t {
-                padding-top: 30px !important
-            }
-
-            .es-m-p30b {
-                padding-bottom: 30px !important
-            }
-
-            .es-m-p30r {
-                padding-right: 30px !important
-            }
-
-            .es-m-p30l {
-                padding-left: 30px !important
-            }
-
-            .es-m-p35 {
-                padding: 35px !important
-            }
-
-            .es-m-p35t {
-                padding-top: 35px !important
-            }
-
-            .es-m-p35b {
-                padding-bottom: 35px !important
-            }
-
-            .es-m-p35r {
-                padding-right: 35px !important
-            }
-
-            .es-m-p35l {
-                padding-left: 35px !important
-            }
-
-            .es-m-p40 {
-                padding: 40px !important
-            }
-
-            .es-m-p40t {
-                padding-top: 40px !important
-            }
-
-            .es-m-p40b {
-                padding-bottom: 40px !important
-            }
-
-            .es-m-p40r {
-                padding-right: 40px !important
-            }
-
-            .es-m-p40l {
-                padding-left: 40px !important
+            .es-menu td a {
+                font-size: 16px !important
             }
 
             .es-desk-hidden {
@@ -439,39 +304,40 @@
 </head>
 
 <body
-    style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
-    <div class="es-wrapper-color" style="background-color:#FFFFFF">
+    style="width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;padding:0;Margin:0">
+    <div class="es-wrapper-color" style="background-color:#EFEFEF">
         <!--[if gte mso 9]>
    <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-    <v:fill type="tile" color="#ffffff"></v:fill>
+    <v:fill type="tile" color="#efefef"></v:fill>
    </v:background>
   <![endif]-->
         <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0"
-            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#FFFFFF">
-            <tr>
+            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#EFEFEF">
+            <tr style="border-collapse:collapse">
                 <td valign="top" style="padding:0;Margin:0">
-                    <table cellpadding="0" cellspacing="0" class="es-header" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
-                        <tr>
-                            <td align="center" style="padding:0;Margin:0">
-                                <table bgcolor="#ffffff" class="es-header-body" align="center" cellpadding="0"
-                                    cellspacing="0"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
-                                    <tr>
+                    <table cellpadding="0" cellspacing="0" class="es-content" align="center"
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td class="es-adaptive" align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#efefef;width:600px"
+                                    cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center">
+                                    <tr style="border-collapse:collapse">
                                         <td align="left"
-                                            style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" width="100%"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr>
-                                                    <td align="center" valign="top"
-                                                        style="padding:0;Margin:0;width:560px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
+                                            style="Margin:0;padding-top:15px;padding-bottom:15px;padding-left:20px;padding-right:20px">
+                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
+                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="left" style="padding:0;Margin:0;width:270px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
                                                             role="presentation"
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr>
-                                                                <td align="center" style="padding:0;Margin:0">
-                                                                    <h1
-                                                                        style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:bold;color:#333333">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-infoblock es-m-txt-c" align="left"
+                                                                    style="padding:0;Margin:0;line-height:14px;font-size:12px;color:#CCCCCC">
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;color:#CCCCCC;font-size:12px">
                                                                         <font style="vertical-align:inherit">
                                                                             <font style="vertical-align:inherit">
                                                                                 <font style="vertical-align:inherit">
@@ -481,68 +347,143 @@
                                                                                             style="vertical-align:inherit">
                                                                                             <font
                                                                                                 style="vertical-align:inherit">
-                                                                                                Xin chào bạn
-                                                                                                {{ $info['nguoi_mua'] }}
-                                                                                            </font>
-                                                                                        </font>
-                                                                                    </font>
-                                                                                </font>
-                                                                            </font>
-                                                                        </font><br>
-                                                                    </h1>
-                                                                    <h1
-                                                                        style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:bold;color:#333333">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                <font style="vertical-align:inherit">
-                                                                                    <font
-                                                                                        style="vertical-align:inherit">
-                                                                                        <font
-                                                                                            style="vertical-align:inherit">
-                                                                                            <font
-                                                                                                style="vertical-align:inherit">
-                                                                                                Đặt hàng thành công!
+                                                                                                Đặt văn bản tiêu đề
+                                                                                                trước của bạn ở đây
                                                                                             </font>
                                                                                         </font>
                                                                                     </font>
                                                                                 </font>
                                                                             </font>
                                                                         </font>
-                                                                    </h1>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit"></font>
-                                                                        </font><br>
                                                                     </p>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px">
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:270px" valign="top"><![endif]-->
+                                            <table class="es-right" cellspacing="0" cellpadding="0" align="right"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="left" style="padding:0;Margin:0;width:270px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="right" class="es-infoblock es-m-txt-c"
+                                                                    style="padding:0;Margin:0;line-height:14px;font-size:12px;color:#CCCCCC">
                                                                     <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:14px;color:#CCCCCC;font-size:12px">
+                                                                        <a href="https://viewstripo.email"
+                                                                            target="_blank" class="view"
+                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#CCCCCC;font-size:12px">
                                                                             <font style="vertical-align:inherit">
                                                                                 <font style="vertical-align:inherit">
                                                                                     <font
                                                                                         style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    Xem trong trình
+                                                                                                    duyệt</font>
+                                                                                            </font>
+                                                                                        </font>
                                                                                     </font>
                                                                                 </font>
                                                                             </font>
-                                                                        </font>
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">Đơn
-                                                                                hàng của bạn sẽ được chuyển đi. </font>
-                                                                            <font style="vertical-align:inherit">Dưới
-                                                                                đây là một số thông tin về đơn hàng của
-                                                                                bạn.</font>
-                                                                        </font>
+                                                                        </a></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="es-content" cellspacing="0" cellpadding="0" align="center"
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                    align="center"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px">
+                                            <table width="100%" cellspacing="0" cellpadding="0"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:560px">
+                                                        <table
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:0px"
+                                                            width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-top:10px;padding-bottom:15px">
+                                                                    <h1
+                                                                        style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#333333">
                                                                         <font style="vertical-align:inherit">
                                                                             <font style="vertical-align:inherit">
                                                                                 <font style="vertical-align:inherit">
                                                                                     <font
                                                                                         style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                Cảm ơn vì đơn đặt hàng
+                                                                                                của bạn</font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </font>
+                                                                        </font><br>
+                                                                    </h1>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:40px;padding-right:40px">
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <font style="vertical-align:inherit">
+                                                                            <font style="vertical-align:inherit">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                Đơn hàng của bạn sẽ được
+                                                                                                chuyển đi. Dưới đây là
+                                                                                                một số thông tin về đơn
+                                                                                                hàng của bạn.</font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </font>
+                                                                            <font style="vertical-align:inherit">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                            </font>
+                                                                                        </font>
                                                                                     </font>
                                                                                 </font>
                                                                             </font>
@@ -560,365 +501,70 @@
                             </td>
                         </tr>
                     </table>
-                    <table cellpadding="0" cellspacing="0" class="es-content" align="center"
+                    <table class="es-content" cellspacing="0" cellpadding="0" align="center"
                         style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
-                        <tr>
+                        <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0"
-                                    cellspacing="0"
+                                <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                    align="center"
                                     style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
-                                    <tr>
+                                    <tr style="border-collapse:collapse">
                                         <td align="left"
-                                            style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" width="100%"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr>
-                                                    <td align="center" valign="top"
-                                                        style="padding:0;Margin:0;width:560px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr>
-                                                                <td align="center" style="padding:0;Margin:0">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-style:normal;font-weight:bold;color:#333333">
+                                            style="Margin:0;padding-top:20px;padding-left:20px;padding-right:20px;padding-bottom:30px">
+                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:280px" valign="top"><![endif]-->
+                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                <tr style="border-collapse:collapse">
+                                                    <td class="es-m-p20b" align="left"
+                                                        style="padding:0;Margin:0;width:280px">
+                                                        <table
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#fef9ef;border-color:#efefef;border-width:1px 0px 1px 1px;border-style:solid"
+                                                            width="100%" cellspacing="0" cellpadding="0"
+                                                            bgcolor="#fef9ef" role="presentation">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left"
+                                                                    style="Margin:0;padding-bottom:10px;padding-top:20px;padding-left:20px;padding-right:20px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif">
                                                                         <font style="vertical-align:inherit">
                                                                             <font style="vertical-align:inherit">
                                                                                 <font style="vertical-align:inherit">
                                                                                     <font
                                                                                         style="vertical-align:inherit">
-                                                                                    </font>
-                                                                                </font>
-                                                                            </font>
-                                                                        </font>
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">Mã
-                                                                                Hàng Đơn {{ $info['ma_don'] }}</font>
-                                                                        </font>
-                                                                    </h2>
-                                                                    <font style="vertical-align:inherit">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                <font style="vertical-align:inherit">
-                                                                                </font>
-                                                                            </font>
-                                                                        </font>
-                                                                    </font>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" class="es-m-txt-c"
-                                                                    style="padding:0;Margin:0;padding-top:20px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#a0937d;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">MỤC
-                                                                                THỨ TỰ</font>
-                                                                        </font>
-                                                                    </p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px;font-size:0">
-                                                                    <table border="0" width="100%"
-                                                                        height="100%" cellpadding="0"
-                                                                        cellspacing="0" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td
-                                                                                style="padding:0;Margin:0;border-bottom:1px solid #a0937d;background:none;height:1px;width:100%;margin:0px">
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    @foreach ($gioHang as $key => $value)
-                                    <tr>
-                                        <td class="esdev-adapt-off" align="left"
-                                            style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" class="esdev-mso-table"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:560px">
-                                                <tr>
-                                                    <td class="esdev-mso-td" valign="top"
-                                                        style="padding:0;Margin:0">
-                                                        <table cellpadding="0" cellspacing="0" class="es-left"
-                                                            align="left"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                                            <tr>
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;width:125px">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td align="center"
-                                                                                style="padding:0;Margin:0;font-size:0px">
-                                                                                <a target="_blank"
-                                                                                    href="{{env('APP_URL')}}/product/{{$value->slug_san_pham}}-post{{$value->id}}"
-                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#926B4A;font-size:14px"><img
-                                                                                        class="adapt-img p_image"
-                                                                                        src="{{ explode(",",$value->hinh_anh)[0] }}"
-                                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
-                                                                                        width="125"></a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td style="padding:0;Margin:0;width:20px"></td>
-                                                    <td class="esdev-mso-td" valign="top"
-                                                        style="padding:0;Margin:0">
-                                                        <table cellpadding="0" cellspacing="0" class="es-left"
-                                                            align="left"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                                            <tr>
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;width:125px">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td align="left"
-                                                                                class="es-m-p0t es-m-p0b es-m-txt-l"
-                                                                                style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px">
-                                                                                <h3
-                                                                                    style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#333333">
-                                                                                    <strong class="p_name">
                                                                                         <font
                                                                                             style="vertical-align:inherit">
-                                                                                            <font
-                                                                                                style="vertical-align:inherit">
-                                                                                                {{ $value->ten_san_pham }}
-                                                                                            </font>
-                                                                                        </font>
-                                                                                    </strong></h3>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td style="padding:0;Margin:0;width:20px"></td>
-                                                    <td class="esdev-mso-td" valign="top"
-                                                        style="padding:0;Margin:0">
-                                                        <table cellpadding="0" cellspacing="0" class="es-left"
-                                                            align="left"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                                            <tr>
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;width:176px">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td align="right"
-                                                                                class="es-m-p0t es-m-p0b"
-                                                                                style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px">
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px"
-                                                                                    class="p_description">
-                                                                                    <font
-                                                                                        style="vertical-align:inherit">
-                                                                                        <font
-                                                                                            style="vertical-align:inherit">
-                                                                                            {{ $value->so_luong }} x
-                                                                                        </font>
-                                                                                    </font>
-                                                                                </p>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td style="padding:0;Margin:0;width:20px"></td>
-                                                    <td class="esdev-mso-td" valign="top"
-                                                        style="padding:0;Margin:0">
-                                                        <table cellpadding="0" cellspacing="0" class="es-right"
-                                                            align="right"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
-                                                            <tr>
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;width:74px">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td align="right"
-                                                                                class="es-m-p0t es-m-p0b"
-                                                                                style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px">
-                                                                                <p class="p_price"
-                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                                    <font
-                                                                                        style="vertical-align:inherit">
-                                                                                        <font
-                                                                                            style="vertical-align:inherit">
-                                                                                            {{ number_format($value->thanh_tien, 0, '.', ',') }}
-                                                                                            đ</font>
-                                                                                    </font>
-                                                                                </p>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left"
-                                            style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" width="100%"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr>
-                                                    <td align="center" valign="top"
-                                                        style="padding:0;Margin:0;width:560px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr>
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px;font-size:0">
-                                                                    <table border="0" width="100%"
-                                                                        height="100%" cellpadding="0"
-                                                                        cellspacing="0" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td
-                                                                                style="padding:0;Margin:0;border-bottom:1px solid #a0937d;background:none;height:1px;width:100%;margin:0px">
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="esdev-adapt-off" align="left"
-                                            style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" class="esdev-mso-table"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:560px">
-                                                <tr>
-                                                    <td class="esdev-mso-td" valign="top"
-                                                        style="padding:0;Margin:0">
-                                                        <table cellpadding="0" cellspacing="0" class="es-left"
-                                                            align="left"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
-                                                            <tr>
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;width:466px">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td align="right"
-                                                                                style="padding:0;Margin:0">
-                                                                                <p
-                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                                    <font
-                                                                                        style="vertical-align:inherit">
-                                                                                        <font
-                                                                                            style="vertical-align:inherit">
-                                                                                            Phi Ship </font>
-                                                                                    </font><br><b>
-                                                                                        <font
-                                                                                            style="vertical-align:inherit">
-                                                                                            <font
-                                                                                                style="vertical-align:inherit">
-                                                                                                (
-                                                                                                {{ $value->so_luong }}mặt
-                                                                                                hàng)</font>
-                                                                                        </font>
-                                                                                    </b>
-                                                                                </p>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td style="padding:0;Margin:0;width:20px"></td>
-                                                    <td class="esdev-mso-td" valign="top"
-                                                        style="padding:0;Margin:0">
-                                                        <table cellpadding="0" cellspacing="0" class="es-right"
-                                                            align="right"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
-                                                            <tr>
-                                                                <td align="left"
-                                                                    style="padding:0;Margin:0;width:74px">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td align="right"
-                                                                                style="padding:0;Margin:0">
-                                                                                <p
-                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                                    <font
-                                                                                        style="vertical-align:inherit">
-                                                                                        <font
-                                                                                            style="vertical-align:inherit">
-                                                                                            <font
-                                                                                                style="vertical-align:inherit">
-                                                                                                {{ $info['phi_ship'] }}đ </font>
-                                                                                        </font><br><strong>
                                                                                             <font
                                                                                                 style="vertical-align:inherit">
                                                                                                 <font
                                                                                                     style="vertical-align:inherit">
-                                                                                                    {{ number_format($value->thanh_tien, 0, '.', ',') }}
-                                                                                                    đ</font>
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        BẢNG TÓM TẮT:
+                                                                                                    </font>
+                                                                                                </font>
                                                                                             </font>
-                                                                                        </strong>
-                                                                                </p>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </font>
+                                                                        </font>
+                                                                    </h4>
                                                                 </td>
                                                             </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    <tr>
-                                        <td align="left"
-                                            style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" width="100%"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr>
-                                                    <td align="center" valign="top"
-                                                        style="padding:0;Margin:0;width:560px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr>
-                                                                <td align="left" class="es-m-txt-c"
-                                                                    style="padding:0;Margin:0;padding-top:20px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#a0937d;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left"
+                                                                    style="padding:0;Margin:0;padding-bottom:20px;padding-left:20px;padding-right:20px">
+                                                                    <table
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%"
+                                                                        class="cke_show_border" cellspacing="1"
+                                                                        cellpadding="1" border="0" align="left"
+                                                                        role="presentation">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                Đơn hàng#</td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
                                                                                 <font style="vertical-align:inherit">
                                                                                     <font
                                                                                         style="vertical-align:inherit">
@@ -942,10 +588,25 @@
                                                                                                                             style="vertical-align:inherit">
                                                                                                                             <font
                                                                                                                                 style="vertical-align:inherit">
-                                                                                                                                THÔNG
-                                                                                                                                TIN
-                                                                                                                                NGƯỜI
-                                                                                                                                GỬI
+                                                                                                                                <font
+                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                    <font
+                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                        <font
+                                                                                                                                            style="vertical-align:inherit">
+                                                                                                                                            <font
+                                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                                <font
+                                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                                    <font
+                                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                                        {{ $info['ma_don'] }}
+                                                                                                                                                    </font>
+                                                                                                                                                </font>
+                                                                                                                                            </font>
+                                                                                                                                        </font>
+                                                                                                                                    </font>
+                                                                                                                                </font>
                                                                                                                             </font>
                                                                                                                         </font>
                                                                                                                     </font>
@@ -958,112 +619,19 @@
                                                                                         </font>
                                                                                     </font>
                                                                                 </font>
-                                                                            </font>
-                                                                        </font>
-                                                                    </p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px;font-size:0">
-                                                                    <table border="0" width="100%"
-                                                                        height="100%" cellpadding="0"
-                                                                        cellspacing="0" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
-                                                                            <td
-                                                                                style="padding:0;Margin:0;border-bottom:1px solid #a0937d;background:none;height:1px;width:100%;margin:0px">
                                                                             </td>
                                                                         </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" style="padding:0;Margin:0">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">Anh
-                                                                                Quân</font>
-                                                                        </font><br>
-                                                                    </p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <a href="mailto:Quanluong2001@gmail.com"
-                                                                            target="_blank"
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#926B4A;font-size:14px">
-                                                                            <font style="vertical-align:inherit">
-                                                                                <font style="vertical-align:inherit">
-                                                                                    quanluong2001@gmail.com</font>
-                                                                            </font>
-                                                                        </a><br></p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <a href=""
-                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#926B4A;font-size:14px">
-                                                                            <font style="vertical-align:inherit">
-                                                                                <font style="vertical-align:inherit">
-                                                                                    0379705129</font>
-                                                                            </font>
-                                                                        </a><br></p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">Đà
-                                                                                Nẵng</font>
-                                                                        </font><br><br>
-                                                                    </p>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left"
-                                            style="padding:0;Margin:0;padding-top:20px;padding-left:20px;padding-right:20px">
-                                            <table cellpadding="0" cellspacing="0" width="100%"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                <tr>
-                                                    <td align="center" valign="top"
-                                                        style="padding:0;Margin:0;width:560px">
-                                                        <table cellpadding="0" cellspacing="0" width="100%"
-                                                            role="presentation"
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                            <tr>
-                                                                <td align="left" class="es-m-txt-c"
-                                                                    style="padding:0;Margin:0;padding-top:20px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#a0937d;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">ĐỊA
-                                                                                CHỈ GIAO HÀNG</font>
-                                                                        </font>
-                                                                    </p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px;font-size:0">
-                                                                    <table border="0" width="100%"
-                                                                        height="100%" cellpadding="0"
-                                                                        cellspacing="0" role="presentation"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                                        <tr>
+                                                                        <tr style="border-collapse:collapse">
                                                                             <td
-                                                                                style="padding:0;Margin:0;border-bottom:1px solid #a0937d;background:none;height:1px;width:100%;margin:0px">
-                                                                            </td>
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <br></td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <br></td>
                                                                         </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" style="padding:0;Margin:0">
-                                                                    <font style="vertical-align:inherit">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
                                                                                 <font style="vertical-align:inherit">
                                                                                     <font
                                                                                         style="vertical-align:inherit">
@@ -1073,52 +641,188 @@
                                                                                                 style="vertical-align:inherit">
                                                                                                 <font
                                                                                                     style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        <font
+                                                                                                            style="vertical-align:inherit">
+                                                                                                            <font
+                                                                                                                style="vertical-align:inherit">
+                                                                                                                <font
+                                                                                                                    style="vertical-align:inherit">
+                                                                                                                    <font
+                                                                                                                        style="vertical-align:inherit">
+                                                                                                                        <font
+                                                                                                                            style="vertical-align:inherit">
+                                                                                                                            <font
+                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                <font
+                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                    <font
+                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                        <font
+                                                                                                                                            style="vertical-align:inherit">
+                                                                                                                                            <font
+                                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                                <font
+                                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                                    <font
+                                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                                        Tổng
+                                                                                                                                                        tiền
+                                                                                                                                                    </font>
+                                                                                                                                                </font>
+                                                                                                                                            </font>
+                                                                                                                                        </font>
+                                                                                                                                    </font>
+                                                                                                                                </font>
+                                                                                                                            </font>
+                                                                                                                        </font>
+                                                                                                                    </font>
+                                                                                                                </font>
+                                                                                                            </font>
+                                                                                                        </font>
+                                                                                                    </font>
                                                                                                 </font>
                                                                                             </font>
                                                                                         </font>
                                                                                     </font>
                                                                                 </font>
-                                                                            </font>
-                                                                        </font>
-                                                                    </font>
+                                                                            </td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        <font
+                                                                                                            style="vertical-align:inherit">
+                                                                                                            <font
+                                                                                                                style="vertical-align:inherit">
+                                                                                                                <font
+                                                                                                                    style="vertical-align:inherit">
+                                                                                                                    <font
+                                                                                                                        style="vertical-align:inherit">
+                                                                                                                        <font
+                                                                                                                            style="vertical-align:inherit">
+                                                                                                                            <font
+                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                <font
+                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                    <font
+                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                        <font
+                                                                                                                                            style="vertical-align:inherit">
+                                                                                                                                            <font
+                                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                                <font
+                                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                                    <font
+                                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                                        {{ number_format($info['tong_tien'], 0, '.', ',') }} vnđ
+                                                                                                                                                    </font>
+                                                                                                                                                </font>
+                                                                                                                                            </font>
+                                                                                                                                        </font>
+                                                                                                                                    </font>
+                                                                                                                                </font>
+                                                                                                                            </font>
+                                                                                                                        </font>
+                                                                                                                    </font>
+                                                                                                                </font>
+                                                                                                            </font>
+                                                                                                        </font>
+                                                                                                    </font>
+                                                                                                </font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        <font
+                                                                                                            style="vertical-align:inherit">
+                                                                                                            <font
+                                                                                                                style="vertical-align:inherit">
+                                                                                                                <font
+                                                                                                                    style="vertical-align:inherit">
+                                                                                                                    <font
+                                                                                                                        style="vertical-align:inherit">
+                                                                                                                        <font
+                                                                                                                            style="vertical-align:inherit">
+                                                                                                                            <font
+                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                <font
+                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                    <font
+                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                        <font
+                                                                                                                                            style="vertical-align:inherit">
+                                                                                                                                            <font
+                                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                                <font
+                                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                                    <font
+                                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                                    </font>
+                                                                                                                                                </font>
+                                                                                                                                            </font>
+                                                                                                                                        </font>
+                                                                                                                                    </font>
+                                                                                                                                </font>
+                                                                                                                            </font>
+                                                                                                                        </font>
+                                                                                                                    </font>
+                                                                                                                </font>
+                                                                                                            </font>
+                                                                                                        </font>
+                                                                                                    </font>
+                                                                                                </font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
                                                                     <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                {{ $info['nguoi_nhan'] }}</font>
-                                                                        </font>
-                                                                    </p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                {{ $info['ma_don'] }}</font>
-                                                                        </font>
-                                                                    </p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                {{ number_format($info['tong_tien'], 0, '.', ',') }}
-                                                                                đ</font>
-                                                                        </font>
-                                                                    </p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                {{ $info['email'] }}</font>
-                                                                        </font>
-                                                                    </p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
-                                                                        <font style="vertical-align:inherit">
-                                                                            <font style="vertical-align:inherit">
-                                                                                {{ $info['dia_chi'] }}</font>
-                                                                        </font>
-                                                                    </p>
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14px">
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <br></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td><td style="width:0px"></td><td style="width:280px" valign="top"><![endif]-->
+                                            <table class="es-right" cellspacing="0" cellpadding="0" align="right"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="left" style="padding:0;Margin:0;width:280px">
+                                                        <table
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#fef9ef;border-width:1px;border-style:solid;border-color:#efefef"
+                                                            width="100%" cellspacing="0" cellpadding="0"
+                                                            bgcolor="#fef9ef" role="presentation">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left"
+                                                                    style="Margin:0;padding-bottom:10px;padding-top:20px;padding-left:20px;padding-right:20px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif">
                                                                         <font style="vertical-align:inherit">
                                                                             <font style="vertical-align:inherit">
                                                                                 <font style="vertical-align:inherit">
@@ -1132,6 +836,15 @@
                                                                                                     style="vertical-align:inherit">
                                                                                                     <font
                                                                                                         style="vertical-align:inherit">
+                                                                                                        <font
+                                                                                                            style="vertical-align:inherit">
+                                                                                                            <font
+                                                                                                                style="vertical-align:inherit">
+                                                                                                                ĐỊA CHỈ
+                                                                                                                GIAO
+                                                                                                                HÀNG:
+                                                                                                            </font>
+                                                                                                        </font>
                                                                                                     </font>
                                                                                                 </font>
                                                                                             </font>
@@ -1139,8 +852,487 @@
                                                                                     </font>
                                                                                 </font>
                                                                             </font>
-                                                                        </font><br>
+                                                                        </font>
+                                                                    </h4>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left"
+                                                                    style="padding:0;Margin:0;padding-bottom:20px;padding-left:20px;padding-right:20px">
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <font style="vertical-align:inherit">
+                                                                        <font style="vertical-align:inherit">
+                                                                            <font style="vertical-align:inherit">
+                                                                            <font style="vertical-align:inherit">
+                                                                                <font style="vertical-align:inherit">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font style="vertical-align:inherit">
+                                                                                    <font style="vertical-align:inherit">
+                                                                                        <font style="vertical-align:inherit">
+                                                                                        <font style="vertical-align:inherit">{{ $info['nguoi_mua'] }}</font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                                </font>
+                                                                            </font>
+                                                                            </font>
+                                                                        </font>
+                                                                        </font>
                                                                     </p>
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        {{ $info['dia_chi'] }}</p>
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        {{ $info['email'] }}<br></p>
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <br></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="es-content" cellspacing="0" cellpadding="0" align="center"
+                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                    align="center"
+                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px">
+                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
+                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                <tr style="border-collapse:collapse">
+                                                    <td class="es-m-p0r es-m-p20b" valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:270px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left"
+                                                                    style="padding:0;Margin:0;padding-left:20px">
+                                                                    <h4
+                                                                        style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif">
+                                                                        <font style="vertical-align:inherit">
+                                                                            <font style="vertical-align:inherit">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                MỤC THỨ TỰ</font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </font>
+                                                                        </font>
+                                                                    </h4>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:270px" valign="top"><![endif]-->
+                                            <table cellspacing="0" cellpadding="0" align="right"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="left" style="padding:0;Margin:0;width:270px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="padding:0;Margin:0">
+                                                                    <table
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%"
+                                                                        class="cke_show_border" cellspacing="1"
+                                                                        cellpadding="1" border="0"
+                                                                        role="presentation">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:13px">
+                                                                                Tên sản phẩm</td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;width:60px;font-size:13px;line-height:13px;text-align:center">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        <font
+                                                                                                            style="vertical-align:inherit">
+                                                                                                            <font
+                                                                                                                style="vertical-align:inherit">
+                                                                                                                <font
+                                                                                                                    style="vertical-align:inherit">
+                                                                                                                    <font
+                                                                                                                        style="vertical-align:inherit">
+                                                                                                                        SL
+                                                                                                                    </font>
+                                                                                                                </font>
+                                                                                                            </font>
+                                                                                                        </font>
+                                                                                                    </font>
+                                                                                                </font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;width:100px;font-size:13px;line-height:13px;text-align:center">
+                                                                                Đơn giá</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
+                                            <table width="100%" cellspacing="0" cellpadding="0"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:560px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:10px;font-size:0">
+                                                                    <table width="100%" height="100%"
+                                                                        cellspacing="0" cellpadding="0"
+                                                                        border="0" role="presentation"
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;border-bottom:1px solid #efefef;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    @foreach ($gioHang as $key => $value)
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="Margin:0;padding-top:5px;padding-bottom:10px;padding-left:20px;padding-right:20px">
+                                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:178px" valign="top"><![endif]-->
+                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                <tr style="border-collapse:collapse">
+                                                    <td class="es-m-p0r es-m-p20b" valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:178px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;font-size:0"><a
+                                                                        href="{{env('APP_URL')}}/product/{{$value->slug_san_pham}}-post{{$value->id}}"
+                                                                        target="_blank"
+                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#D48344;font-size:14px"><img
+                                                                            src="{{ explode(",",$value->hinh_anh)[0] }}"
+                                                                            class="adapt-img"
+                                                                            width="125"
+                                                                            style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td><td style="width:20px"></td><td style="width:362px" valign="top"><![endif]-->
+
+                                            <table cellspacing="0" cellpadding="0" align="right"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td align="left" style="padding:0;Margin:0;width:362px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="padding:0;Margin:0">
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <br></p>
+                                                                    <table
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:100%"
+                                                                        class="cke_show_border" cellspacing="1"
+                                                                        cellpadding="1" border="0"
+                                                                        role="presentation">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td style="padding:0;Margin:0">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        {{ $value->ten_san_pham }}
+                                                                                                    </font>
+                                                                                                </font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;width:60px;text-align:center">
+                                                                                {{ $value->so_luong }} x</td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;width:100px;text-align:center">
+                                                                                <font style="vertical-align:inherit">
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        {{ number_format($value->thanh_tien, 0, '.', ',') }} vnđ
+                                                                                                    </font>
+                                                                                                </font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </font>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <br></p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
+                                            <table width="100%" cellspacing="0" cellpadding="0"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:560px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:10px;font-size:0">
+                                                                    <table width="100%" height="100%"
+                                                                        cellspacing="0" cellpadding="0"
+                                                                        border="0" role="presentation"
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;border-bottom:1px solid #efefef;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="padding:0;Margin:0;padding-left:20px;padding-right:20px">
+                                            <table width="100%" cellspacing="0" cellpadding="0"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:560px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="center"
+                                                                    style="padding:0;Margin:0;padding-bottom:10px;font-size:0">
+                                                                    <table width="100%" height="100%"
+                                                                        cellspacing="0" cellpadding="0"
+                                                                        border="0" role="presentation"
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;border-bottom:1px solid #efefef;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left"
+                                            style="Margin:0;padding-top:5px;padding-left:20px;padding-bottom:30px;padding-right:40px">
+                                            <table width="100%" cellspacing="0" cellpadding="0"
+                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center"
+                                                        style="padding:0;Margin:0;width:540px">
+                                                        <table width="100%" cellspacing="0" cellpadding="0"
+                                                            role="presentation"
+                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="right" style="padding:0;Margin:0">
+                                                                    <table
+                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px"
+                                                                        class="cke_show_border" cellspacing="1"
+                                                                        cellpadding="1" border="0" align="right"
+                                                                        role="presentation">
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px">
+                                                                                <br></td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px">
+                                                                                <br></td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px">
+                                                                                <br></td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px;color:#d48344">
+                                                                                <br></td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px">
+                                                                                Phí Ship:</td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px">
+                                                                                {{ number_format($info['phi_ship'], 0, '.', ',') }} vnđ</td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px">
+                                                                                <strong>
+                                                                                    <font
+                                                                                        style="vertical-align:inherit">
+                                                                                        <font
+                                                                                            style="vertical-align:inherit">
+                                                                                            <font
+                                                                                                style="vertical-align:inherit">
+                                                                                                <font
+                                                                                                    style="vertical-align:inherit">
+                                                                                                    <font
+                                                                                                        style="vertical-align:inherit">
+                                                                                                        <font
+                                                                                                            style="vertical-align:inherit">
+                                                                                                            <font
+                                                                                                                style="vertical-align:inherit">
+                                                                                                                <font
+                                                                                                                    style="vertical-align:inherit">
+                                                                                                                    <font
+                                                                                                                        style="vertical-align:inherit">
+                                                                                                                        <font
+                                                                                                                            style="vertical-align:inherit">
+                                                                                                                            <font
+                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                <font
+                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                    <font
+                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                        <font
+                                                                                                                                            style="vertical-align:inherit">
+                                                                                                                                            <font
+                                                                                                                                                style="vertical-align:inherit">
+                                                                                                                                                <font
+                                                                                                                                                    style="vertical-align:inherit">
+                                                                                                                                                    <font
+                                                                                                                                                        style="vertical-align:inherit">
+                                                                                                                                                        <font
+                                                                                                                                                            style="vertical-align:inherit">
+                                                                                                                                                            Tổng
+                                                                                                                                                            tiền
+                                                                                                                                                            hàng:
+                                                                                                                                                        </font>
+                                                                                                                                                    </font>
+                                                                                                                                                </font>
+                                                                                                                                            </font>
+                                                                                                                                        </font>
+                                                                                                                                    </font>
+                                                                                                                                </font>
+                                                                                                                            </font>
+                                                                                                                        </font>
+                                                                                                                    </font>
+                                                                                                                </font>
+                                                                                                            </font>
+                                                                                                        </font>
+                                                                                                    </font>
+                                                                                                </font>
+                                                                                            </font>
+                                                                                        </font>
+                                                                                    </font>
+                                                                                </strong></td>
+                                                                            <td
+                                                                                style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:27px;color:#d48344">
+                                                                                {{ number_format($info['tong_tien'], 0, '.', ',') }} vnđ
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">
+                                                                        <br></p>
                                                                 </td>
                                                             </tr>
                                                         </table>
