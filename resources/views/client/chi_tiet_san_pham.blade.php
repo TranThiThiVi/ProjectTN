@@ -86,13 +86,13 @@
                                 <input id="id_san_pham" type="hidden" value="{{$value->id}}">
                             </div>
                             <div class="product-vendor product-meta mb-3">
-                                <strong class="label">Nhóm sản phẩm:</strong> {{ $value->ten_chuyen_muc }}
+                                <strong class="label">Nhóm sản phẩm:</strong> {{ $value->ten_danh_muc }}
                             </div>
 
                             <div class="misc d-flex align-items-end justify-content-between mt-4">
                                 <div class="quantity d-flex align-items-center justify-content-between">
                                     <button class="qty-btn dec-qty"><img src="/assets_client/img/icon/minus.svg" alt="minus"></button>
-                                    <input id="so_luong" class="qty-input" type="number" name="qty" value="1" min="0">
+                                    <input id="so_luong" class="qty-input" type="number" name="qty" value="1">
                                     <button class="qty-btn inc-qty"><img src="/assets_client/img/icon/plus.svg" alt="plus"></button>
                                 </div>
                                 <div class="message-popup d-flex align-items-center">
@@ -118,12 +118,9 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div class="buy-it-now-btn mt-2">
-                                    <button type="submit" class="position-relative btn-atc btn-buyit-now">BUY IT NOW</button>
-                                </div>
                             </form>
 
-                            <div class="guaranteed-checkout">
+                            {{-- <div class="guaranteed-checkout">
                                 <strong class="label mb-1 d-block">Guaranteed safe checkout:</strong>
                                 <ul class="list-unstyled checkout-icon-list d-flex align-items-center flex-wrap">
                                     <li class="checkout-icon-item">
@@ -237,7 +234,7 @@
                                         </svg>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> --}}
 
                             <div class="share-area mt-4 d-flex align-items-center">
                                 <strong class="label mb-1 d-block">Share:</strong>
@@ -316,7 +313,7 @@
                             </div>
                             @endif
                             <div class="review-form-area accordion-child">
-                                <input type="text" value="{{$value->id}}" id="id_san_pham">
+                                <input type="text" value="{{$value->id}}" hidden id="id_san_pham">
                                 <fieldset>
                                     <label class="label">Bình Luận</label>
                                     <textarea cols="30" id="noi_dung" rows="10" placeholder="Nhập nội dung..."></textarea>

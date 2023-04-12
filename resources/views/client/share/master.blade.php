@@ -10,7 +10,7 @@
         <!-- announcement bar end -->
 
         <!-- header start -->
-        @include('client.share.menu')
+            @include('client.share.menu')
         <!-- header end -->
         @yield('noi_dung')
 
@@ -120,7 +120,7 @@
             trang_thai  :   0,
         },
         created()   {
-
+            console.log(123);
         },
         methods :   {
             add() {
@@ -177,12 +177,12 @@
                     });
             },
 
-            cmt(){
-                console.log(1);
+            timSanPham(){
+                console.log(123);
             },
         },
     });
-    </script>
+</script>
     <script>
         $(document).ready(function() {
             $("#addtocart_me").click(function() {
@@ -207,5 +207,20 @@
             })
         });
     </script>
+<script>
+    new Vue({
+        el      :   '#search',
+        data    :   {
+            key_search  :   '',
+        },
+        created()   {
 
+        },
+        methods :   {
+            timSanPham(){
+                window.location.href = '/search-san-pham/' + this.key_search;
+            },
+        },
+    });
+    </script>
 </html>

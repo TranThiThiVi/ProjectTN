@@ -22,6 +22,7 @@ Route::post('/register', [ClientController::class, 'actionRegister']);
 Route::get('/login', [HomePageController::class, 'viewLogin']);
 Route::post('/login', [ClientController::class, 'actionLogin']);
 Route::get('/active/{hash}', [ClientController::class, 'activeClient']);
+Route::get('/search-san-pham/{keySearch}', [ClientController::class, 'searchSanPham']);
 
 Route::get('/product/{id}', [SanPhamController::class, 'chiTiet']);
 
@@ -43,6 +44,8 @@ Route::post('/add-contact', [HomePageController::class, 'actionContact']);
 
 
 Route::group(['middleware' => 'check'], function() {
+    Route::get('/cap-nhat-thong-tin', [ClientController::class, 'viewCapNhatThongTin']);
+    Route::post('/updateInfo-client', [ClientController::class, 'updateInfoClient']);
     Route::get('/client/yeu-thich/{id}', [ClientController::class, 'yeuThich']);
     Route::get('/client/huy-yeu-thich/{id}', [ClientController::class, 'huyYeuThich']);
     Route::get('/viewYeuthich', [ClientController::class, 'viewYeuthich']);
@@ -76,6 +79,7 @@ Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmidd
     });
     Route::group(['prefix' => '/san-pham'], function() {
         Route::get('/index', [SanPhamController::class, 'index']);
+        Route::get('/data-dm', [SanPhamController::class, 'dataDM']);
         Route::post('/create', [SanPhamController::class, 'store']);
         Route::get('/data', [SanPhamController::class, 'data']);
         Route::post('/delete', [SanPhamController::class, 'destroy']);

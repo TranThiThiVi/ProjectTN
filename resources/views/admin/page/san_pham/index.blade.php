@@ -246,9 +246,10 @@
 
             loadDanhMuc() {
                 axios
-                    .get('/admin/danh-muc/data')
+                    .get('/admin/san-pham/data-dm')
                     .then((res) => {
-                        this.listDanhMuc = res.data.list;
+                        this.listDanhMuc = res.data.data;
+                        console.log(this.listDanhMuc);
                     });
             },
 

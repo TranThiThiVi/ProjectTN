@@ -70,10 +70,9 @@
                                             @if($value->id_danh_muc_cha == 0 && $value->is_open == 1)
                                                 <li class="menu-list-item nav-item-sub">
                                                     <div class="mega-menu-header">
-                                                        <a class="nav-link-sub nav-text-sub megamenu-heading"
-                                                            href="">
+                                                        <p class="nav-link-sub nav-text-sub megamenu-heading">
                                                             {{ $value->ten_danh_muc }}
-                                                        </a>
+                                                        </p>
                                                     </div>
                                                     <div class="submenu-transform megamenu-transform">
                                                         <ul class="megamenu list-unstyled">
@@ -149,10 +148,11 @@
                 </div>
             </div>
         </div>
-        <div class="search-wrapper">
+        <div class="search-wrapper" id="search">
             <div class="container">
                 <form action="#" class="search-form d-flex align-items-center">
-                    <button type="submit" class="search-submit bg-transparent pl-0 text-start">
+                    <a v-bind:href="'/search-san-pham/' + key_search">
+                    <button type="button" class="search-submit bg-transparent pl-0 text-start">
                         <svg class="icon icon-search" width="20" height="20" viewBox="0 0 20 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -160,8 +160,9 @@
                                 fill="black" />
                         </svg>
                     </button>
+                    </a>
                     <div class="search-input mr-4">
-                        <input type="text" placeholder="Search your products..." autocomplete="off">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm" v-model="key_search" v-on:keyup.enter="timSanPham()" autocomplete="off">
                     </div>
                     <div class="search-close">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -170,6 +171,7 @@
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
+
                     </div>
                 </form>
             </div>
