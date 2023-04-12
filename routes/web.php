@@ -62,7 +62,7 @@ Route::group(['middleware' => 'check'], function() {
 });
 
 
-Route::group(['prefix' => '/admin', 'middleware' => 'adminmiddleware'], function() { //, 'middleware' => 'adminmiddleware'
+Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmiddleware'
     Route::group(['prefix' => '/danh-muc'], function() {
         Route::get('/index', [DanhMucController::class, 'index']);
         Route::post('/create', [DanhMucController::class, 'store']);
