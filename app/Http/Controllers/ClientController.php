@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Client\CreateClientRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Jobs\SendMailCreateClientJob;
 use App\Models\BinhLuan;
@@ -15,7 +16,7 @@ use function GuzzleHttp\Promise\all;
 
 class ClientController extends Controller
 {
-    public function actionRegister(Request $request)
+    public function actionRegister(CreateClientRequest $request)
     {
         $data = $request->all();
         $data['password'] = bcrypt($request->password);

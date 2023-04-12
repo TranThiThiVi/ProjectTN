@@ -55,6 +55,11 @@ class HomePageController extends Controller
         $data = SanPham::whereIn('id_danh_muc', $list_id_danh_muc)->get();
         return view('client.list_product', compact('data', 'danhMuc'));
     }
+
+    public function viewContact()
+    {
+        return view('client.contact');
+    }
     // public function sanPhamDanhMuc($id)
     // {
     //     $sanPham = SanPham::where('id_danh_muc', $id)->get();

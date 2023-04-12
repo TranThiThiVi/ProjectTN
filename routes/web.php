@@ -37,6 +37,7 @@ Route::get('/tin-tuc', [HomePageController::class, 'tinTuc']);
 Route::get('/chitiet-tintuc/{id}', [HomePageController::class, 'chiTiettinTuc']);
 
 Route::get('/list-product/{id}', [HomePageController::class, 'viewListProduct']);
+Route::get('/contact', [HomePageController::class, 'viewContact']);
 
 
 
