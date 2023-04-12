@@ -6,16 +6,13 @@
         <div class="col-lg-12 col-md-12 col-12">
             <div class="filter-sort-wrapper d-flex justify-content-between flex-wrap">
                 <div class="collection-title-wrap d-flex align-items-end" style="margin-top: 15px">
-                    @if (isset($danhMuc))
-                    <h2 class="collection-title heading_24 mb-0">{{ $danhMuc->ten_danh_muc}}</h2>
-                    <p class="collection-counter text_16 mb-0 ms-2">({{ count($data) }} items)</p>
-                    @endif
+                    <h2 class="collection-title heading_24 mb-0">Sản Phẩm Tìm Kiếm: {{$keySearch}}</h2>
+                    <p class="collection-counter text_16 mb-0 ms-2">({{ count($sanPham) }} items)</p>
                 </div>
-
             </div>
             <div class="collection-product-container">
                 <div class="row">
-                    @foreach ($data as $key => $value )
+                    @foreach ($sanPham as $key => $value )
                     <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-duration="700">
                         <div class="product-card">
                             <div class="product-card-img">
@@ -54,10 +51,8 @@
                         </div>
                     </div>
                     @endforeach
-
                 </div>
             </div>
-
         </div>
         <!-- product area end -->
 

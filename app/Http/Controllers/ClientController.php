@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Client\CreateClientRequest;
+use App\Http\Requests\Client\UpdateClientRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Jobs\SendMailCreateClientJob;
 use App\Models\BinhLuan;
 use App\Models\Client;
+use App\Models\SanPham;
 use App\Models\YeuThich;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -180,5 +182,32 @@ class ClientController extends Controller
             toastr()->error('Đã hủy yêu thích!');
             return redirect()->back();
         }
+    }
+
+    public function viewCapNhatThongTin()
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $client = Client::find($KhachHang->id);
+        return view('client.capnhatClient', compact('client'));
+    }
+
+    public function updateInfoClient(UpdateClientRequest $request)
+    {
+        $client = Client::find($request->id);
+        $client->update($request->all());
+
+        return response()->json([
+            'status'    => 1,
+            'message'   => 'Đã cập nhật thông tin thành công',
+        ]);
+    }
+
+    public function searchSanPham($keySearch)
+    {
+        $sanPham = SanPham::where('is_open', 1)
+                          ->where('ten_san_pham', 'like', '%' . $keySearch . '%')
+                          ->get();
+        return view('client.search_san_pham', compact('sanPham', 'keySearch'));
     }
 }

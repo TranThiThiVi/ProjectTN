@@ -6,6 +6,7 @@ use App\Http\Requests\SanPham\CreateSanPhamRequest;
 use App\Http\Requests\SanPham\DeleteSanPhamRequest;
 use App\Http\Requests\SanPham\UpdateSanPhamRequest;
 use App\Models\BinhLuan;
+use App\Models\DanhMuc;
 use App\Models\SanPham;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -104,5 +105,13 @@ class SanPhamController extends Controller
                 'message'    => 'Đã có lỗi hệ thống!'
             ]);
         }
+    }
+
+    public function dataDM()
+    {
+        $data = DanhMuc::where('id_danh_muc_cha', '!=', 0)->get();
+        return response()->json([
+            'data'     => $data,
+        ]);
     }
 }
