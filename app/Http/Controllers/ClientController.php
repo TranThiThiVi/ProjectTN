@@ -7,7 +7,9 @@ use App\Http\Requests\Client\UpdateClientRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Jobs\SendMailCreateClientJob;
 use App\Models\BinhLuan;
+use App\Models\ChiTietBanHang;
 use App\Models\Client;
+use App\Models\DonHang;
 use App\Models\SanPham;
 use App\Models\YeuThich;
 use Illuminate\Http\Request;
@@ -209,5 +211,39 @@ class ClientController extends Controller
                           ->where('ten_san_pham', 'like', '%' . $keySearch . '%')
                           ->get();
         return view('client.search_san_pham', compact('sanPham', 'keySearch'));
+    }
+
+    public function viewLichSuDonHang()
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $donHang = DonHang::where('id_khach_hang', $KhachHang->id)->get();
+
+        return view('client.lich_su_don_hang');
+    }
+
+    public function dataLichSuDonHang()
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $donHang = DonHang::where('id_khach_hang', $KhachHang->id)->get();
+
+        return response()->json([
+            'data'    => $donHang,
+        ]);
+    }
+
+    public function dataLichSuDonHangChiTiet($id)
+    {
+        $KhachHang = Auth::guard('client')->user();
+
+        $data = ChiTietBanHang::where('id_don_hang', $id)
+                            ->where('id_khach_hang', $KhachHang->id)
+                            ->join('san_phams', 'chi_tiet_ban_hangs.id_san_pham', 'san_phams.id')
+                            ->select('chi_tiet_ban_hangs.*', 'san_phams.ten_san_pham', 'san_phams.slug_san_pham', 'san_phams.hinh_anh', 'san_phams.gia_ban', 'san_phams.gia_khuyen_mai')
+                            ->get();
+        return response()->json([
+            'data'    => $data,
+        ]);
     }
 }

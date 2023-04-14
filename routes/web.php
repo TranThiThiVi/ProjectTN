@@ -45,6 +45,9 @@ Route::post('/add-contact', [HomePageController::class, 'actionContact']);
 
 Route::group(['middleware' => 'check'], function() {
     Route::get('/cap-nhat-thong-tin', [ClientController::class, 'viewCapNhatThongTin']);
+    Route::get('/lich-su-don-hang', [ClientController::class, 'viewLichSuDonHang']);
+    Route::get('/lich-su/data', [ClientController::class, 'dataLichSuDonHang']);
+    Route::get('/lich-su/dataChiTiet/{id}', [ClientController::class, 'dataLichSuDonHangChiTiet']);
     Route::post('/updateInfo-client', [ClientController::class, 'updateInfoClient']);
     Route::get('/client/yeu-thich/{id}', [ClientController::class, 'yeuThich']);
     Route::get('/client/huy-yeu-thich/{id}', [ClientController::class, 'huyYeuThich']);
@@ -67,7 +70,7 @@ Route::group(['middleware' => 'check'], function() {
 });
 
 
-Route::group(['prefix' => '/admin'], function() { //, 'middleware' => 'adminmiddleware'
+Route::group(['prefix' => '/admin', 'middleware' => 'adminmiddleware'], function() { //, 'middleware' => 'adminmiddleware'
     Route::group(['prefix' => '/danh-muc'], function() {
         Route::get('/index', [DanhMucController::class, 'index']);
         Route::post('/create', [DanhMucController::class, 'store']);

@@ -129,6 +129,9 @@
                                     fill="black" />
                             </svg>
                         </a>
+                        <a href="/lich-su-don-hang" class="header-action-item header-hamburger ms-4">
+                            <i class="fa-solid fa-cart-flatbed fa-2x text-dark"></i>
+                        </a>
                         <a class="header-action-item header-hamburger ms-4 d-lg-none" href="#drawer-menu"
                             data-bs-toggle="offcanvas">
                             <svg class="icon icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="24"
