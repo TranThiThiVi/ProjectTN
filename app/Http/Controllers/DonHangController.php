@@ -94,26 +94,24 @@ class DonHangController extends Controller
 
     public function getDataDonHang()
     {
-        $khachHang = Auth::guard('client')->user();
-
-        $data = DonHang::where('id_khach_hang', $khachHang->id)->get();
+        $data = DonHang::get();
 
         return response()->json([
             'data' => $data
         ]);
 
     }
-    public function getDataDonHangAdmin()
-    {
-        $khachHang = Auth::guard('client')->user();
+    // public function getDataDonHangAdmin()
+    // {
+    //     $khachHang = Auth::guard('client')->user();
 
-        $data = DonHang::where('id_khach_hang', $khachHang->id)->get();
+    //     $data = DonHang::where('id_khach_hang', $khachHang->id)->get();
 
-        return response()->json([
-            'data' => $data
-        ]);
+    //     return response()->json([
+    //         'data' => $data
+    //     ]);
 
-    }
+    // }
     public function chiTietDonHangAdmin($id)
     {
         $data = ChiTietBanHang::where('id_don_hang', $id)
@@ -135,10 +133,24 @@ class DonHangController extends Controller
 
             return response()->json([
                 'status' => 1,
-                'message' => 'Đổi trạng thái thành công',
+                'message' => 'Đổi trạng thái vận chuyển thành công',
             ]);
         }
 
+    }
+
+    public function changeThanhToan(Request $request)
+    {
+        $donHang = DonHang::find($request->id);
+        if($donHang){
+            $donHang->thanh_toan = !$request->thanh_toan;
+            $donHang->save();
+
+            return response()->json([
+                'status' => 1,
+                'message' => 'Đổi trạng đơn hàng thái thành công',
+            ]);
+        }
     }
 }
 

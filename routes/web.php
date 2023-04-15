@@ -138,6 +138,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'adminmiddleware'], function
         Route::get('/data', [DonHangController::class, 'getDataDonHang']);
         Route::get('/chi-tiet/{id}', [DonHangController::class, 'chiTietDonHangAdmin']);
         Route::post('/giao-hang', [DonHangController::class, 'changeGiaoHang']);
+        Route::post('/change-thanh-toan', [DonHangController::class, 'changeThanhToan']);
 
     });
 

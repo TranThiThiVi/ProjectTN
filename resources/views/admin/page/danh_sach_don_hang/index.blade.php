@@ -31,8 +31,8 @@
                                     <td class="align-middle">@{{ numberformat(value.tien_hang) }}</td>
                                     <td class="align-middle">@{{ numberformat(value.phi_ship) }}</td>
                                     <td class="text-center align-middle">
-                                        <button v-if="value.thanh_toan == 0" class="btn btn-danger">Chưa Thanh Toán</button>
-                                        <button v-else-if="value.thanh_toan == 1" class="btn btn-success">Đã Thanh Toán</button>
+                                        <button v-if="value.thanh_toan == 0" v-on:click="changeThanhToan(value)" class="btn btn-danger">Chưa Thanh Toán</button>
+                                        <button v-else-if="value.thanh_toan == 1" v-on:click="changeThanhToan(value)" class="btn btn-success">Đã Thanh Toán</button>
                                     </td>
                                     <td class="text-center align-middle">
                                         <button v-if="value.giao_hang == 0" v-on:click="giao_hang = value"
@@ -177,6 +177,20 @@
                             }
                         })
                 },
+
+                changeThanhToan(v){
+                    axios
+                        .post('/admin/don-hang/change-thanh-toan', v)
+                        .then((res) => {
+                            if (res.data.status) {
+                                toastr.success(res.data.message);
+                                $("#exampleModal").modal('hide');
+                                this.loadData();
+                            } else {
+                                toastr.success(res.data.message);
+                            }
+                        })
+                }
             },
         });
     </script>
